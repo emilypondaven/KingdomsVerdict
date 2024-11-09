@@ -20,4 +20,13 @@ public class GameEnv {
     public void movePlayerY(int direction) {
         player.changeY(direction);
     }
+
+    public void setupGame() {
+        setupPrompts();
+    }
+
+    private void setupPrompts() {
+        
+    }
+
 }
