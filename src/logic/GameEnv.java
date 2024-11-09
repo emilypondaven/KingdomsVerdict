@@ -157,7 +157,6 @@ public class GameEnv {
 
                 prompts.add(prompt3);
 
-                return prompts;
                 break;
             case 2:
                 prompt1 = new Prompt("The commonfolk want to raise taxes on the rich.");
@@ -241,7 +240,6 @@ public class GameEnv {
                 );
                 
                 prompts.add(prompt3);
-                return prompts;
                 break;
             case 3:
                 prompt1 = new Prompt("The nobles feel they aren't treated fairly. They want tax reductions");
@@ -325,7 +323,6 @@ public class GameEnv {
                 );
                 
                 prompts.add(prompt3);
-                return prompts;
                 break;
 
             case 4:
@@ -410,8 +407,9 @@ public class GameEnv {
             );
             
             prompts.add(prompt3);
-            return prompts;
             break;
         }
+
+        return prompts;
     }
 }
