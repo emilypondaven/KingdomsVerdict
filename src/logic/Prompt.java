@@ -1,6 +1,4 @@
 package logic;
-import javax.swing.SwingUtilities;
-import gui.Window;
 import java.util.ArrayList;
 import java.util.List;
 

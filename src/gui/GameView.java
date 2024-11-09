@@ -29,7 +29,7 @@ public class GameView extends JPanel {
     private static final int TARGET_DELAY = 1000 / TARGET_FPS; // Calculate delay between frames (in milliseconds)
     private Timer gameLoopTimer;
     private int votes;
-    private int population = 500;
+    private int population;
     private int gold;
     private GameKeyboardListener keyListener;
     
@@ -103,7 +103,7 @@ public class GameView extends JPanel {
             keyListener.resetPressedKeys();
              // Create the custom popup dialog
             JDialog dialog = new JDialog(Window.getInstance(), gameEnvironment.getCurrentVillage().getName(), true); // 'true' makes it modal
-            dialog.setSize(1000, 400);
+            dialog.setSize(1000, 550);
             dialog.setLayout(new BorderLayout());
 
             // Make the dialog visible
