@@ -24,6 +24,7 @@ public class GameView extends JPanel {
     private static final int TARGET_FPS = 5; // Set target FPS
     private static final int TARGET_DELAY = 1000 / TARGET_FPS; // Calculate delay between frames (in milliseconds)
     private Timer gameLoopTimer;
+    private JPanel votesPanel;
 
     public GameView() {
         super();
@@ -35,6 +36,7 @@ public class GameView extends JPanel {
         setFocusable(true);
         setFocusCycleRoot(true);
         instance = this;
+        votesPanel = new JPanel();
         // Initialize game loop Timer
         gameLoopTimer = new Timer(TARGET_DELAY, new ActionListener() {
             @Override
@@ -73,7 +75,6 @@ public class GameView extends JPanel {
         BufferedImage environmentVillage = Resources.getImage("environVillage.png");
         g.drawString("Environment Village", 765, 685);
         g.drawImage(environmentVillage, (int) DEFAULT_DIMENSIONS.getWidth() - PADDING - environmentVillage.getWidth(), (int) DEFAULT_DIMENSIONS.getHeight() - PADDING - environmentVillage.getHeight(), this);
-        
         g.drawImage(gameEnvironment.getPlayer().getPlayerSprite(), gameEnvironment.getPlayerX(), gameEnvironment.getPlayerY(), this);
     }
 
@@ -86,7 +87,11 @@ public class GameView extends JPanel {
             ChoiceScreen screen = new ChoiceScreen();
             System.out.println("BEFORE");
             if (gameEnvironment.getCurrentVillage().getPrompt() != null) {
+<<<<<<< HEAD
                 System.out.println("gg");
+=======
+                gameEnvironment.resetPlayerCoords();
+>>>>>>> e9de4d1e1a89619fce72e19a331e1c82cca96e1a
                 screen.createScreen(Window.getInstance(), gameEnvironment.getCurrentVillage().getPrompt(), gameEnvironment.getPlayer(), gameEnvironment.getCurrentVillage());
                 gameEnvironment.resetCurrentVillage();
             }

@@ -11,7 +11,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ChoiceScreen {
+public class ChoiceScreen extends JPanel {
     JPanel topPanel,choiceScreenPanel, currentVotesPanel, villagePopulationPanel, promptPanel, buttonPanel, villageDescriptionPanel;
     JLabel promptLabel, currentVotesLabel, villagePopulationLabel, villageDescriptionLabel;
     JButton prompt1Button, prompt2Button, prompt3Button;
