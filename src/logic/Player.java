@@ -5,6 +5,8 @@ public class Player {
 
     private int x, y;
 
+    private int gold = 100;
+
     public Player() {
         x = 0;
         y = 0;

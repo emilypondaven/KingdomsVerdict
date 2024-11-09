@@ -8,5 +8,4 @@ public class Prompt {
     private PromptAction[] promptActions; 
 
     
-
 }
