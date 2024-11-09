@@ -14,7 +14,7 @@ public class Player {
     private int width, height;
 
     private static int gold = 100;
-    private static boolean reporterReporting = true;
+    private static boolean reportReporting = true;
     private Direction currentDirection;
     private boolean idle = true;
 

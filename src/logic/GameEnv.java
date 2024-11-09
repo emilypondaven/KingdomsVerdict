@@ -68,9 +68,12 @@ public class GameEnv {
 
    /*  public List<Prompt> setPrompts(int villageNum) {
         List<Prompt> prompts = new ArrayList<>();
+        Prompt prompt1;
+        Prompt prompt2;
+        Prompt prompt3;
         switch (villageNum) {
             case 1:
-                Prompt prompt1 = new Prompt("The farmers from the common folk village are using up too much water.");
+                prompt1 = new Prompt("The farmers from the common folk village are using up too much water.");
                 prompt1.addPromptAction(
                     "Kill farmers from common folk village and steal their gold",
                     30,
@@ -99,10 +102,10 @@ public class GameEnv {
                 );
                 prompts.add(prompt1);
                 
-                Prompt prompt2= new Prompt("They recently heard about the benefits of renewable energy from a foreign wizard. He offered to build a solar farm for 20 gold.");
+                prompt2= new Prompt("They recently heard about the benefits of renewable energy from a foreign wizard. He offered to build a solar farm for 20 gold.");
                 prompt2.addPromptAction(
                     "Sounds like a good idea. Let's build some solar panels!",
-                    20,
+                    -20,
                     new int[] {30, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
@@ -110,7 +113,7 @@ public class GameEnv {
                 );
                 prompt2.addPromptAction(
                     "Build a coal factory instead since it's cheaper. Only 5 gold!",
-                    5,
+                    -5,
                     new int[] {-50, 80, 0, 0},
                     new int[] {0, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
@@ -126,7 +129,7 @@ public class GameEnv {
                 );
                 prompts.add(prompt2);
 
-                Prompt prompt3 = new Prompt("They want to ban fire magic. They argue it's polluting their kingdom");
+                prompt3 = new Prompt("They want to ban fire magic. They argue it's polluting their kingdom");
                 prompt3.addPromptAction(
                     "Promise to ban fire magic once you're king",
                     0,
@@ -153,45 +156,90 @@ public class GameEnv {
                 );
 
                 prompts.add(prompt3);
-                
+                break;
             case 2:
-            Prompt prompt1 = new Prompt("The farmers in another village are using up too much water.");
+                prompt1 = new Prompt("The commonfolk want to raise taxes on the rich.");
                 prompt1.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompt1.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompt1.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompts.add(prompt1);
                 
-                Prompt prompt2= new Prompt("The farmers in another village are using up too much water.");
+                prompt2= new Prompt("They want their children to be more educated so they want to build a new school.");
                 prompt2.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompt2.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompt2.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompts.add(prompt2);
 
-                Prompt prompt3 = new Prompt("The farmers in another village are using up too much water.");
+                prompt3 = new Prompt("They want to build a new healthcare system for their village.");
                 prompt3.addPromptAction(
-
+                    "Pay 50 golds to start a new healthcare system inspired by Medicare-for-All",
+                    -50,
+                    new int[] {10, 50, 10, 10},
+                    new int[] {-10, 0, -10, -10},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"Everyone in the kingdom is very happy with your contribution", "The commonfolk are very happy"}
                 );
                 prompt3.addPromptAction(
-
+                    "Force the healing wizards to move from the outlaw town into the commonfolk town",
+                    0,
+                    new int[] {0, 50, 0, -10},
+                    new int[] {0, 0, 0, 10},
+                    new int[] {0, 10, 0, -10},
+                    new String[] {"The wizards reluctantly moved and the outlaws are not too happy but the commonfolk appreciate your help", "The outlaws didn't notice the missing wizards as no one was able to report the news of your actions"}
                 );
                 prompt3.addPromptAction(
-
+                    "Kill and rob the sick people to then use some of the gold pay for a hospital",
+                    30,
+                    new int[] {-5, -10, 0, 0},
+                    new int[] {5, 0, 0, 0},
+                    new int[] {0, -30, 0, 0},
+                    new String[] {"The spiritualists and commonfolk were furious with your decision", "The commonfolk were not happy with your decision"}
                 );
                 
                 prompts.add(prompt3);
-
+                break;
             case 3:
             Prompt prompt1 = new Prompt("The farmers in another village are using up too much water.");
                 prompt1.addPromptAction(
