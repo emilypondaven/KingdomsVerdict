@@ -33,7 +33,7 @@ public class Resources {
     //Temporary. WIll change if specifics are needed.
     public static void loadAllImages() {
         for (String string : EXPECTED_IMAGES) {
-            loadImage(string,100,100);
+            loadImage(string,80,80);
         }
     }
 

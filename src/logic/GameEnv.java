@@ -20,6 +20,14 @@ public class GameEnv {
         return player;
     }
 
+    public int getPlayerX() {
+        return player.getX();
+    }
+
+    public int getPlayerY() {
+        return player.getY();
+    }
+
     public void movePlayerX(int direction) {
         player.changeX(direction);
     }
