@@ -18,7 +18,7 @@ public class Window extends JFrame{
         instance = this;
     }
 
-    public Window getInstance() {
+    public static Window getInstance() {
         return instance == null ? new Window() : instance;
     }
 }
