@@ -160,25 +160,55 @@ public class GameEnv {
             case 2:
                 prompt1 = new Prompt("The commonfolk want to raise taxes on the rich.");
                 prompt1.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompt1.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompt1.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompts.add(prompt1);
                 
                 prompt2= new Prompt("They want their children to be more educated so they want to build a new school.");
                 prompt2.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompt2.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompt2.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
                 prompts.add(prompt2);
 
