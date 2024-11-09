@@ -151,7 +151,13 @@ public class Player {
     }
 
     public void action(PromptAction action) {
+        
+    }
 
+    public void changeVillageVotes(int[] changesInVotes) {
+        for (int k = 0 ; k < 4; k++) {
+            (GameEnv.villages.get(k)).changeVillageVote(changesInVotes[k]);
+        }
     }
 
 }
