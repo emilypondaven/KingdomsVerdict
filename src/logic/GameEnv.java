@@ -13,7 +13,7 @@ public class GameEnv {
         player = new Player();
 
         // Add everything to the villages
-        // initialiseVillages();
+        initialiseVillages();
     }
 
     public Player getPlayer() {
@@ -36,7 +36,7 @@ public class GameEnv {
         player.changeY(direction);
     }
 
-    /* public void initialiseVillages() {
+    public void initialiseVillages() {
         Village village1 = new Village(
             "Climate Change Spiritualists",
             setPrompts(1),
@@ -64,9 +64,9 @@ public class GameEnv {
             "This has a high population of outlawed villagers due to their differences.\n These include criminals, adventurers and magicians.\n They love chaos and they love to do favours for a reward",
             100
         );
-    } */
+    }
 
-   /*  public List<Prompt> setPrompts(int villageNum) {
+    public List<Prompt> setPrompts(int villageNum) {
         List<Prompt> prompts = new ArrayList<>();
         Prompt prompt1;
         Prompt prompt2;
@@ -173,7 +173,7 @@ public class GameEnv {
                     new int[] {-10, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
-                    new String[] {"Uh oh! The nobles found out and yout lost some of their votes", "The nobles didn't hear about your decisions and the commonfolks are super happy."}
+                    new String[] {"Uh oh! The nobles found out and you lost some of their votes", "The nobles didn't hear about your decisions and the commonfolks are super happy."}
                 );
                 prompt1.addPromptAction(
                     "Refuse raising taxes as this would anger the nobles",
@@ -187,28 +187,28 @@ public class GameEnv {
                 
                 prompt2= new Prompt("They want their children to be more educated so they want to build a new school.");
                 prompt2.addPromptAction(
-                    "Argue that fire magic isn't bad for pollution",
-                    0,
+                    "Pay 30 golds to build the school",
+                    -30,
                     new int[] {-10, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
-                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
+                    new String[] {"The children of the village were so excited", "The children of the village were so excited"}
                 );
                 prompt2.addPromptAction(
-                    "Argue that fire magic isn't bad for pollution",
+                    "Take some wizards from the outlaws and pay them to teach the children",
                     0,
                     new int[] {-10, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
-                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
+                    new String[] {"The outlaws were angered that their villagers were taken but the commonfolks were satisfied", "The outlaws didn't notice the missing words."}
                 );
                 prompt2.addPromptAction(
-                    "Argue that fire magic isn't bad for pollution",
+                    "Way too expensive!!",
                     0,
                     new int[] {-10, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
-                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
+                    new String[] {"The children are disappointed :(", "The children are disappointed :("}
                 );
                 prompts.add(prompt2);
 
@@ -319,5 +319,5 @@ public class GameEnv {
             return prompts;
             
         }
-    } */
+    }
 }
