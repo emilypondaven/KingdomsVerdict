@@ -3,6 +3,8 @@ package logic;
 import java.util.ArrayList;
 import java.util.List;
 
+import gui.GameView;
+
 public class GameEnv {
     //HAve a way of representing entitites
     //Most logical decisions will happen here
@@ -456,5 +458,10 @@ public class GameEnv {
 
     public void resetCurrentVillage() {
         currentVillage = null;
+    }
+
+    public void resetPlayerCoords() {
+        player.setX((int) GameView.DEFAULT_DIMENSIONS.getWidth() / 2 - 40);
+        player.setY((int) GameView.DEFAULT_DIMENSIONS.getHeight() / 2 - 56);
     }
 }
