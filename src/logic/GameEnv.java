@@ -279,9 +279,9 @@ public class GameEnv {
                 prompts.add(prompt3);
 
             case 4:
-            Prompt prompt1 = new Prompt("The farmers in another village are using up too much water.");
+                prompt1 = new Prompt("The nobles feel they aren't treated fairly. They want tax reductions");
                 prompt1.addPromptAction(
-
+                    
                 );
                 prompt1.addPromptAction(
 
@@ -291,7 +291,7 @@ public class GameEnv {
                 );
                 prompts.add(prompt1);
                 
-                Prompt prompt2= new Prompt("The farmers in another village are using up too much water.");
+                prompt2= new Prompt("");
                 prompt2.addPromptAction(
 
                 );
@@ -303,7 +303,7 @@ public class GameEnv {
                 );
                 prompts.add(prompt2);
 
-                Prompt prompt3 = new Prompt("The farmers in another village are using up too much water.");
+                prompt3 = new Prompt("The farmers in another village are using up too much water.");
                 prompt3.addPromptAction(
 
                 );

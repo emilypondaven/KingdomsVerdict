@@ -11,7 +11,7 @@ public class Village {
     private Boolean villageDead;
     private int villageVotes;
 
-    public Village(String name, List<Prompt> prompts, String description, int population, String imageString) {
+    public Village(String name, List<Prompt> prompts, String description, int population) {
         this.name = name;
         this.prompts = prompts;
         this.description = description;
