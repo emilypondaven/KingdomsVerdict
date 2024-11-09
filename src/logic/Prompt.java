@@ -12,7 +12,7 @@ public class Prompt {
         this.promptMessage = promptMessage;
     }
 
-    public void addPromptAction(String message, int goldChange, int[] villageVoterChange, int[] reporterNotHereChange) {
-        promptActions.add(new PromptAction(message, goldChange, villageVoterChange, reporterNotHereChange));
+    public void addPromptAction(String message, int goldChange, int[] villageVoterChange, int[] reporterNotHereChange, String[] postActionMessages) {
+        promptActions.add(new PromptAction(message, goldChange, villageVoterChange, reporterNotHereChange, postActionMessages));
     }
 }
