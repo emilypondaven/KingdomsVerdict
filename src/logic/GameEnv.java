@@ -279,29 +279,60 @@ public class GameEnv {
                 prompts.add(prompt3);
 
             case 4:
-                prompt1 = new Prompt("The nobles feel they aren't treated fairly. They want tax reductions");
-                prompt1.addPromptAction(
-                    
-                );
-                prompt1.addPromptAction(
-
-                );
-                prompt1.addPromptAction(
-
-                );
-                prompts.add(prompt1);
-                
-                prompt2= new Prompt("");
-                prompt2.addPromptAction(
-
-                );
-                prompt2.addPromptAction(
-
-                );
-                prompt2.addPromptAction(
-
-                );
-                prompts.add(prompt2);
+            prompt1 = new Prompt("The criminals are offering to kill the nobles and want to split the gold profits if you pay for some weapons");
+            prompt1.addPromptAction(
+                "Pay for the best golden weapons to impress the criminals",
+                -30,
+                new int[] {0, 0, 0, -10},
+                new int[] {0, 0, 0, 0},
+                new int[] {0, 0, 0, 0},
+                new String[] {"The criminals ran away with the golden weapons and lost respect for you", "The criminals ran away with the golden weapons and lost respect for you"}
+            );
+            prompt1.addPromptAction(
+        "Pay for some cheap shady weapons",
+                100,
+                new int[] {0, -20, 0, 20},
+                new int[] {0, 20, 0, 0},
+                new int[] {0, -30, 0, 0},
+                new String[] {"The criminals were happy to do business with you but the nobles heard you were part of their plan from the reporter", "The criminals were happy to do business with you"}
+            );
+            prompt1.addPromptAction(
+        "Kill some criminals and rob them to show them that their schemes are not right",
+                10,
+                new int[] {-5, -5, -5, 20},
+                new int[] {5, 5, 5, 0},
+                new int[] {0, 0, 0, -10},
+                new String[] {"The criminals respect you more but the rest of the kingdom slightly fear you after hearing about what you did", "The criminals respect you more"}
+            
+            );
+            prompts.add(prompt1);
+            
+            prompt2= new Prompt("The adventurers want you to pay for their adventure and are willing to split the profits with you");
+            prompt2.addPromptAction(
+                "Pay for their adventure",
+                30,
+                new int[] {0, 0, 0, 20},
+                new int[] {0, 0, 0, 0},
+                new int[] {0, 0, 0, 0},
+                new String[] {"They go on adveture and come back with more gold!", "They go on adveture and come back with more gold!"}
+            );
+            prompt2.addPromptAction(
+                "Refuse to pay for their adventure",
+                0,
+                new int[] {0, 0, 0, -10},
+                new int[] {0, 0, 0, 0},
+                new int[] {0, 0, 0, 0},
+                new String[] {"The adventurers were unhappy with your decision", "The adventurers were unhappy with your decision"}
+            );
+            prompt2.addPromptAction(
+                "Tell them that this kingdom is not good for adventuring and that they should leave",
+                0,
+                new int[] {0, 0, 0, 0},
+                new int[] {0, 0, 0, 0},
+                new int[] {0, 0, 0, -30},
+                new String[] {"The adventurers left", "The adventurers left"}
+            );
+            prompts.add(prompt2);
 
                 prompt3 = new Prompt("The farmers in another village are using up too much water.");
                 prompt3.addPromptAction(
@@ -317,6 +348,34 @@ public class GameEnv {
                 prompts.add(prompt3);
         
             return prompts;
+            prompt3 = new Prompt("The wizards want a pet dragon to protect the kingdom");
+            prompt3.addPromptAction(
+                "Get a dragon and dragon tamer for 60 gold for the kingdom",
+                -60,
+                new int[] {15, 15, 15, 50},
+                new int[] {-15, -15, -15, 0},
+                new int[] {0, 0, 0, 0},
+                new String[] {"The entire kingdom heard of what you did feel very safe because of your actions", "Many outlaws are very happy with what you did and now feel very safe"}                
+            );
+            prompt3.addPromptAction(
+            "Get a cheap dragon for 20 gold",
+                -20,
+                new int[] {0, -15, -10, 30},
+                new int[] {0, 15, 10, -5},
+                new int[] {-100, 0, 0, 0},
+                new String[] {"The dragon went wild and burned down the climate change spiritualist village. The other villagers heard that you were part of it and think that you're too irresponsible. But the criminals and wizards thought it was funny", "The dragon went wild and burned down the climate change spiritualist village but no one from the otehr villages heard you were partly to blame. The wizards were happy you paid for a dragon and tried"}                
+            );
+            prompt3.addPromptAction(
+                "Refuse to pay for a dragon",
+                0,
+                new int[] {0, 0, 0, 0},
+                new int[] {0, 0, 0, 0},
+                new int[] {0, 0, 0, 0},
+                new String[] {"The wizards were dissapointed", "The wizards were dissapointed"}                
+            );
+            
+            prompts.add(prompt3);
+            break;
             
         }
     }
