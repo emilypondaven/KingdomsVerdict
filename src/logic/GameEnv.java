@@ -99,27 +99,57 @@ public class GameEnv {
                 );
                 prompts.add(prompt1);
                 
-                Prompt prompt2= new Prompt("");
+                Prompt prompt2= new Prompt("They recently heard about the benefits of renewable energy from a foreign wizard. He offered to build a solar farm for 20 gold.");
                 prompt2.addPromptAction(
-
+                    "Sounds like a good idea. Let's build some solar panels!",
+                    20,
+                    new int[] {30, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"You build a solar farm and all the spiritualists were happy.", "You build a solar farm and all the spiritualists were happy."}
                 );
                 prompt2.addPromptAction(
-
+                    "Build a coal factory instead since it's cheaper. Only 5 gold!",
+                    5,
+                    new int[] {-50, 80, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The commonfolk heard about the factory jobs and moves to the climate change spritualist village", "No one was willing to work in your coal factory since the commonfolk didn't hear about it"}
                 );
                 prompt2.addPromptAction(
-
+                    "That's too much gold. Refuse!!",
+                    0,
+                    new int[] {-5, 0, 0, -10},
+                    new int[] {0, 0, 0, 10},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The reporter reported to outlaws that you refused service from a wizard. They now think you're a wizadist and that you committed a hate crime", "You refused to pay for a solar farm and the spiritualists were not too happy"}
                 );
                 prompts.add(prompt2);
 
-                Prompt prompt3 = new Prompt("");
+                Prompt prompt3 = new Prompt("They want to ban fire magic. They argue it's polluting their kingdom");
                 prompt3.addPromptAction(
-
+                    "Promise to ban fire magic once you're king",
+                    0,
+                    new int[] {30, 0, 0, -20},
+                    new int[] {0, 0, 0, 20},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists are happy with your promise but the outlaws aren't happy with your promise after hearing it from the reporter.", "The spiritualists are happy with your promise"}
                 );
                 prompt3.addPromptAction(
-
+                    "Kill the fire magicians so fire magic is banned forever",
+                    0,
+                    new int[] {45, 0, 0, -20},
+                    new int[] {0, 0, 0, 20},
+                    new int[] {0, 0, 0, -15},
+                    new String[] {"You killed the fire maigicians and the outlaws weren't happy about that but the spiritualists are very happy with your commitement", "You killed the fire magicians but no outlaws know"}
                 );
                 prompt3.addPromptAction(
-
+                    "Argue that fire magic isn't bad for pollution",
+                    0,
+                    new int[] {-10, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
                 );
 
                 prompts.add(prompt3);
