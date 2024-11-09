@@ -182,7 +182,7 @@ public class Player {
     }
 
     public void gameTurn(PromptAction action){
-        String message = action.getPromptActionMessage()
+        String message = action.getPromptActionMessage();
         action(action);
         updateVoteCount();
         updateTotalPopulation();
