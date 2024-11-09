@@ -37,6 +37,10 @@ public class PromptAction {
         this.goldChange = goldChange;
     }
 
+    public int[] getVillagerPopultionChange() {
+        return this.villagerPopulationChange;
+    }
+
     // Getter and Setter for villageVoterChange
     public int[] getVillageVoterChange() {
         int[] change = villageVoterChange;
