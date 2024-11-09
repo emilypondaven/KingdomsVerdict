@@ -52,4 +52,6 @@ public class PromptAction {
     public void setreporterNotReportingChange(int[] reporterNotHereChange) {
         this.reporterNotReportingChange = reporterNotHereChange;
     }
+
+    
 }
