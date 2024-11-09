@@ -86,11 +86,9 @@ public class GameView extends JPanel {
             //make the choce screen.
             ChoiceScreen screen = new ChoiceScreen();
             System.out.println("BEFORE");
-            if (gameEnvironment.getCurrentVillage().getPrompt() != null) {
-                gameEnvironment.resetPlayerCoords();
-                screen.createScreen(Window.getInstance(), gameEnvironment.getCurrentVillage().getPrompt(), gameEnvironment.getPlayer(), gameEnvironment.getCurrentVillage());
-                gameEnvironment.resetCurrentVillage();
-            }
+            gameEnvironment.resetPlayerCoords();
+            screen.createScreen(Window.getInstance(), gameEnvironment.getCurrentVillage().getPrompt(), gameEnvironment.getPlayer(), gameEnvironment.getCurrentVillage());
+            gameEnvironment.resetCurrentVillage();
             System.out.println("AFTER");
         }
     }
