@@ -160,28 +160,28 @@ public class GameEnv {
             case 2:
                 prompt1 = new Prompt("The commonfolk want to raise taxes on the rich.");
                 prompt1.addPromptAction(
-                    "Argue that fire magic isn't bad for pollution",
+                    "Raise the taxes!",
                     0,
                     new int[] {-10, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
-                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
+                    new String[] {"The noble's heard that you're taking money from them. You're losing their votes!", "You're safe... the nobles heard nothing."}
                 );
                 prompt1.addPromptAction(
-                    "Argue that fire magic isn't bad for pollution",
-                    0,
+                    "Pay Robin Hood 5 golds to steal from the nobles and give to the commonfolks",
+                    5,
                     new int[] {-10, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
-                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
+                    new String[] {"Uh oh! The nobles found out and yout lost some of their votes", "The nobles didn't hear about your decisions and the commonfolks are super happy."}
                 );
                 prompt1.addPromptAction(
-                    "Argue that fire magic isn't bad for pollution",
+                    "Refuse raising taxes as this would anger the nobles",
                     0,
                     new int[] {-10, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
                     new int[] {0, 0, 0, 0},
-                    new String[] {"The spiritualists disagreed", "The spiritualists disagreed"}
+                    new String[] {"The nobles were very happy and you gained some of their votes", "The nobles didn't hear about your decisions and the commonfolks are angry."}
                 );
                 prompts.add(prompt1);
                 
