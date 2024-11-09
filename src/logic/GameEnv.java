@@ -8,6 +8,11 @@ public class GameEnv {
     //Most logical decisions will happen here
     private Player player;
     public static List<Village> villages = new ArrayList<Village>();
+    private Village village1;
+    private Village village2;
+    private Village village3;
+    private Village village4;
+    private int currentVillage = 0;
 
     public GameEnv() {
         player = new Player();
@@ -30,44 +35,71 @@ public class GameEnv {
 
     public void movePlayerX(int direction) {
         player.changeX(direction);
+        checkCollision();
     }
 
     public void movePlayerY(int direction) {
         player.changeY(direction);
+        checkCollision();
+    }
+
+    public void checkCollision() {
+        int playerX = getPlayerX() + 20;
+        int playerY = getPlayerY() + 28;
+        if (village1.inVillage(playerX, playerY)) {
+            currentVillage = 1;
+            System.out.println("in village 1");
+        }
+        else if (village2.inVillage(playerX, playerY)) {
+            currentVillage = 2;
+            System.out.println("in village 2");
+        }
+        else if (village3.inVillage(playerX, playerY)) {
+            currentVillage = 3;
+            System.out.println("in village 3");
+        }
+        else if (village4.inVillage(playerX, playerY)) {
+            currentVillage = 4;
+            System.out.println("in village 4");
+        }
+        else currentVillage = 0;
     }
 
     public void initialiseVillages() {
-        Village village1 = new Village(
+        village1 = new Village(
             "Climate Change Spiritualists",
             setPrompts(1),
             "These are environmentalists who love magic and witches. \n They really care about nature and ensuring that people won't abuse the earth",
-            100,
-            null
+            100, new int[][]{{904,1060},{525,660}}
         );
 
-        Village village2 = new Village(
+        village2 = new Village(
             "Common Folk",
             setPrompts(2),
             "They are hard working labourers who desire more jobs, a higher standard of living and higher wages.\n They want the rich to be taxed (especially the nobles in vilage 3) more and they want less classism.\n They are scared of magic and witches. \n Remember this is the biggest village",
-            200,
-            null
+            300,
+            new int[][]{{40,194},{40,189}}
         );
 
-        Village village3 = new Village(
+        village3 = new Village(
             "Nobles",
             setPrompts(3),
             "They are very rich and powerful people who want lower taxes. \n They feel threatened by witches",
             100,
-            null
+            new int[][]{{40,460},{530,660}}
         );
 
-        Village village4 = new Village(
+        village4 = new Village(
             "The Outlaws",
             setPrompts(4),
             "This has a high population of outlawed villagers due to their differences.\n These include criminals, adventurers and magicians.\n They love chaos and they love to do favours for a reward",
             100,
-            null
+            new int[][]{{904,1060},{525,660}}
         );
+    }
+
+    public int getCurrentVillage() {
+        return currentVillage;
     }
 
     public List<Prompt> setPrompts(int villageNum) {

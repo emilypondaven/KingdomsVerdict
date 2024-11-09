@@ -74,7 +74,6 @@ public class GameView extends JPanel {
         g.drawString("Environment Village", 765, 685);
         g.drawImage(environmentVillage, (int) DEFAULT_DIMENSIONS.getWidth() - PADDING - environmentVillage.getWidth(), (int) DEFAULT_DIMENSIONS.getHeight() - PADDING - environmentVillage.getHeight(), this);
         
-        
         g.drawImage(gameEnvironment.getPlayer().getPlayerSprite(), gameEnvironment.getPlayerX(), gameEnvironment.getPlayerY(), this);
     }
 
@@ -82,5 +81,18 @@ public class GameView extends JPanel {
     private void updateGame() {
         // update the animation cycle
         gameEnvironment.getPlayer().updateAnimationStage();
+        switch (gameEnvironment.getCurrentVillage()) {
+            case 1:
+                //village1 
+                break;
+            case 2:
+                //village2
+            case 3:
+                //village3
+            case 4: 
+                //village4
+            default:
+                break;
+        }
     }
 }
