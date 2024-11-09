@@ -84,7 +84,10 @@ public class ChoiceScreen {
         return button;
     }
 
-    public void removePanel() {
-        topPanel.setVisible(false);
+    public void removePanel(JFrame window) {
+        window.remove(topPanel);
+        window.revalidate();
+        window.repaint();
+
     }
 }
