@@ -7,7 +7,7 @@ public class Village {
     private List<Prompt> prompts = new ArrayList<Prompt>();
     private int population;
     private String description;
-    private Boolean villageDead;
+    private Boolean villageDead = false;
     private int villageVotes;
     protected int[][] villagePositions;
 
@@ -78,9 +78,17 @@ public class Village {
 
     public void changePopulation(int change) {
         population = population + change;
-        if (population < 0) {
+        if (population <= 0) {
             population = 0;
+            villageDead = true;
         }
+    }
+    public boolean inVillage(int x, int y) {
+        if (x < villagePositions[0][0] || x > villagePositions[0][1]
+            || y < villagePositions[1][0] || y > villagePositions[1][1]) {
+            return false;
+        }
+        else return true;
     }
     public boolean inVillage(int x, int y) {
         if (x < villagePositions[0][0] || x > villagePositions[0][1]

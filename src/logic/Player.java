@@ -17,7 +17,8 @@ public class Player {
     private static boolean reporterReporting = true;
     private Direction currentDirection;
     private boolean idle = true;
-    private int voteCount = 80;
+    private static int voteCount = 80;
+    private static int totalPopulation = 400;
 
     enum Direction {
         UP,
@@ -96,13 +97,13 @@ public class Player {
     }
 
     // Setter for reportReporting
-    public void setReportReporting(boolean reportReporting) {
-        this.reporterReporting = reportReporting;
+    public static void setReportReporting(boolean reportReporting) {
+        reporterReporting = reportReporting;
     }
 
     // Method to toggle reportReporting (change from true to false or false to true)
-    public void toggleReportReporting() {
-        this.reporterReporting = !this.reporterReporting;
+    public static void toggleReportReporting() {
+        reporterReporting = !reporterReporting;
     }
 
     public String playerImageString;
@@ -150,9 +151,13 @@ public class Player {
         animationStage = (animationStage + 1) % (currentImage.getWidth() / SPRITE_WIDTH);
     }
 
-    public void action(PromptAction action) {
+    //NEED TO DISPLAY THE STRING RETURNED HERE
+    public String action(PromptAction action) {
+        changeGold(action.getGoldChange());
         changeVillageVotes(action.getVillageVoterChange());
         changePopultion(action.getVillageVoterChange());
+
+        return action.getPromptActionMessage();
     }
 
     public void changeVillageVotes(int[] changesInVotes) {
@@ -165,5 +170,45 @@ public class Player {
         for (int k = 0 ; k < 4; k++) {
             (GameEnv.villages.get(k)).changePopulation(changesInPopulation[k]);
         }
+    }
+
+    public boolean allVillagesDead() {
+        for (int k = 0 ; k < 4; k++) {
+            if (!(GameEnv.villages.get(k)).getVillageDead()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void gameTurn(PromptAction action){
+        String message = action.getPromptActionMessage();
+        action(action);
+        updateVoteCount();
+        updateTotalPopulation();
+    }
+
+    public static int getVoteCount() {
+        return voteCount;
+    }
+
+    public void updateVoteCount() {
+        int total = 0;
+        for (int k = 0 ; k < 4; k++) {
+            total = total + (GameEnv.villages.get(k)).getVillageVotes();
+        }
+        voteCount = total;
+    }
+
+    public static int getTotalPopulation() {
+        return totalPopulation;
+    }
+
+    public void updateTotalPopulation() {
+        int total = 0;
+        for (int k = 0 ; k < 4; k++) {
+            total = total + (GameEnv.villages.get(k)).getPopulation();
+        }
+        totalPopulation = total;
     }
 }
