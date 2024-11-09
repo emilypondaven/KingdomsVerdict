@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ChoiceScreen {
-    JPanel choiceScreenPanel, currentVotesPanel, villagePopulationPanel, promptPanel, buttonPanel, villageDescriptionPanel;
+    JPanel topPanel,choiceScreenPanel, currentVotesPanel, villagePopulationPanel, promptPanel, buttonPanel, villageDescriptionPanel;
     JLabel promptLabel, currentVotesLabel, villagePopulationLabel, villageDescriptionLabel;
     JButton prompt1Button, prompt2Button, prompt3Button;
 
@@ -20,7 +20,7 @@ public class ChoiceScreen {
         window.setLayout(new BorderLayout());  // Set the overall layout to BorderLayout for easier positioning
 
         // Create a panel for the top section with current votes and village population
-        JPanel topPanel = new JPanel(new GridLayout(3, 1));  // Use GridLayout to stack the votes and population vertically
+        topPanel = new JPanel(new GridLayout(3, 1));  // Use GridLayout to stack the votes and population vertically
         topPanel.setBackground(Color.WHITE);
 
         currentVotesPanel = createPanel(topPanel, 250, 200, 700, 50);  // Adjusted size for a smaller display
@@ -82,5 +82,9 @@ public class ChoiceScreen {
         
         panel.add(button);
         return button;
+    }
+
+    public void removePanel() {
+        topPanel.setVisible(false);
     }
 }

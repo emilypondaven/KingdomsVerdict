@@ -96,6 +96,11 @@ public class GameEnv {
             100,
             new int[][]{{904,1060},{525,660}}
         );
+
+        villages.add(village1);
+        villages.add(village2);
+        villages.add(village3);
+        villages.add(village4);
     }
 
     public Village getCurrentVillage() {
