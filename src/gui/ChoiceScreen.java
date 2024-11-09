@@ -32,8 +32,6 @@ public class ChoiceScreen {
         villageDescriptionPanel = createPanel(topPanel, 250, 200, 700, 50);  // Adjusted size for a smaller display
         villageDescriptionLabel = createLabel(villagePopulationPanel, "Village description: " + village.getDescription(), Color.BLACK);
 
-        window.add(topPanel, BorderLayout.NORTH);
-
         // Create a panel for the center section (prompt)
         promptPanel = new JPanel();
         promptLabel = createLabel(promptPanel, prompt.getPromptMessage(), Color.BLACK);
@@ -50,6 +48,10 @@ public class ChoiceScreen {
         prompt3Button = createButton(buttonPanel, player, prompt.getPromptAction(2), Color.GREEN, Color.WHITE);
 
         window.add(buttonPanel, BorderLayout.SOUTH);
+
+        window.add(topPanel, BorderLayout.NORTH);
+        window.pack();
+        window.setVisible(true);
     }
 
     private JPanel createPanel(JPanel parentPanel, int x, int y, int width, int height) {
