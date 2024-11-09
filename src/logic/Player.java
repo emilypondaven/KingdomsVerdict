@@ -152,6 +152,7 @@ public class Player {
 
     public void action(PromptAction action) {
         changeVillageVotes(action.getVillageVoterChange());
+        changePopultion(action.getVillageVoterChange());
     }
 
     public void changeVillageVotes(int[] changesInVotes) {
