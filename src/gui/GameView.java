@@ -35,6 +35,6 @@ public class GameView extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(Resources.getImage(Player.PLAYER_IMAGE_STRING), gameEnvironment.getPlayer().getX(), gameEnvironment.getPlayer().getY(), this);
+        g.drawImage(Resources.getImage(Player.PLAYER_IMAGE_STRING), gameEnvironment.getPlayerX(), gameEnvironment.getPlayerY(), this);
     }
 }
