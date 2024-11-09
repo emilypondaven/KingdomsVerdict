@@ -11,7 +11,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ChoiceScreen {
+public class ChoiceScreen extends JPanel {
     JPanel topPanel,choiceScreenPanel, currentVotesPanel, villagePopulationPanel, promptPanel, buttonPanel, villageDescriptionPanel;
     JLabel promptLabel, currentVotesLabel, villagePopulationLabel, villageDescriptionLabel;
     JButton prompt1Button, prompt2Button, prompt3Button;
@@ -32,8 +32,6 @@ public class ChoiceScreen {
         villageDescriptionPanel = createPanel(topPanel, 250, 200, 700, 50);  // Adjusted size for a smaller display
         villageDescriptionLabel = createLabel(villagePopulationPanel, "Village description: " + village.getDescription(), Color.BLACK);
 
-        window.add(topPanel, BorderLayout.NORTH);
-
         // Create a panel for the center section (prompt)
         promptPanel = new JPanel();
         promptLabel = createLabel(promptPanel, prompt.getPromptMessage(), Color.BLACK);
@@ -45,11 +43,15 @@ public class ChoiceScreen {
         buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));  // Use FlowLayout to center the buttons horizontally
         buttonPanel.setBackground(Color.WHITE);
 
-        prompt1Button = createButton(buttonPanel, player, prompt.getPromptAction(0), Color.GREEN, Color.WHITE);
-        prompt2Button = createButton(buttonPanel, player, prompt.getPromptAction(1), Color.GREEN, Color.WHITE);
-        prompt3Button = createButton(buttonPanel, player, prompt.getPromptAction(2), Color.GREEN, Color.WHITE);
+        prompt1Button = createButton(window, buttonPanel, player, prompt.getPromptAction(0), Color.GREEN, Color.WHITE);
+        prompt2Button = createButton(window, buttonPanel, player, prompt.getPromptAction(1), Color.GREEN, Color.WHITE);
+        prompt3Button = createButton(window, buttonPanel, player, prompt.getPromptAction(2), Color.GREEN, Color.WHITE);
 
         window.add(buttonPanel, BorderLayout.SOUTH);
+
+        window.add(topPanel, BorderLayout.NORTH);
+        // window.pack();
+        window.setVisible(true);
     }
 
     private JPanel createPanel(JPanel parentPanel, int x, int y, int width, int height) {
@@ -66,7 +68,7 @@ public class ChoiceScreen {
         return label;
     }
 
-    private JButton createButton(JPanel panel, Player player, PromptAction prompt, Color backgroundColor, Color textColor) {
+    private JButton createButton(JFrame window, JPanel panel, Player player, PromptAction prompt, Color backgroundColor, Color textColor) {
         JButton button = new JButton(prompt.getPostActionMessage());
         button.setBackground(backgroundColor);
         button.setForeground(textColor);
@@ -77,6 +79,7 @@ public class ChoiceScreen {
             public void actionPerformed(ActionEvent e) {
                 // Action to be performed when the button is clicked
                 player.gameTurn(prompt);
+                removePanel(window);
             }
         });
         
@@ -84,7 +87,10 @@ public class ChoiceScreen {
         return button;
     }
 
-    public void removePanel() {
-        topPanel.setVisible(false);
+    public void removePanel(JFrame window) {
+        window.remove(topPanel);
+        window.revalidate();
+        window.repaint();
+
     }
 }

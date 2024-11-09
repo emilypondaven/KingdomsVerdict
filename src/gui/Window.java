@@ -1,5 +1,6 @@
 package gui;
 import javax.swing.JFrame;
+import javax.swing.OverlayLayout;
 
 import io.Resources;
 
@@ -13,7 +14,8 @@ public class Window extends JFrame{
         setVisible(true);
         Resources.loadAllSprites();
         Resources.loadAllFonts();
-        add(GameView.getInstance());
+        getContentPane().setLayout(new OverlayLayout(getContentPane()));
+        getContentPane().add(GameView.getInstance());
         pack();
         instance = this;
     }
