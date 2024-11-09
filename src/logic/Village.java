@@ -8,7 +8,7 @@ public class Village {
     private List<Prompt> prompts = new ArrayList<>();
     private int population;
     private String description;
-    private Boolean villageDead;
+    private Boolean villageDead = false;
     private int villageVotes;
 
     public Village(String name, List<Prompt> prompts, String description, int population, String imageString) {
@@ -16,7 +16,6 @@ public class Village {
         this.prompts = prompts;
         this.description = description;
         this.population = population;
-        this.imageString = imageString;
         this.imageString = imageString;
     }
 
@@ -79,8 +78,9 @@ public class Village {
 
     public void changePopulation(int change) {
         population = population + change;
-        if (population < 0) {
+        if (population <= 0) {
             population = 0;
+            villageDead = true;
         }
     }
 }
