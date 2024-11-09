@@ -17,9 +17,8 @@ public class ChoiceScreen {
     JButton prompt1Button, prompt2Button, prompt3Button;
 
     public void createScreen(JFrame window, Prompt prompt, Player player, Village village) {
-        if (prompt != null) System.out.println("NULL");;
         window.setLayout(new BorderLayout());  // Set the overall layout to BorderLayout for easier positioning
-
+        System.out.println(prompt.getPromptMessage());
         // Create a panel for the top section with current votes and village population
         topPanel = new JPanel(new GridLayout(3, 1));  // Use GridLayout to stack the votes and population vertically
         topPanel.setBackground(Color.WHITE);
