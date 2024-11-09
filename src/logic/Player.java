@@ -151,6 +151,7 @@ public class Player {
     }
 
     public void action(PromptAction action) {
+        changeGold(action.getGoldChange());
         changeVillageVotes(action.getVillageVoterChange());
         changePopultion(action.getVillageVoterChange());
     }
