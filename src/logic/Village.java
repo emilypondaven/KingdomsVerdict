@@ -1,3 +1,4 @@
+package logic;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +29,14 @@ public class Village {
         prompts.add(prompt);
     }
 
-    public void getPrompt() {
-        
+    // If prompt is null, sprite should leave
+    public Prompt getPrompt() {
+        Prompt prompt = null;
+        if (!prompts.isEmpty()) {
+            prompt = prompts.get(0);
+            prompts.remove(0);
+        }
+
+        return prompt;
     }
 }
