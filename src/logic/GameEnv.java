@@ -41,28 +41,32 @@ public class GameEnv {
             "Climate Change Spiritualists",
             setPrompts(1),
             "These are environmentalists who love magic and witches. \n They really care about nature and ensuring that people won't abuse the earth",
-            100
+            100,
+            null
         );
 
         Village village2 = new Village(
             "Common Folk",
             setPrompts(2),
             "They are hard working labourers who desire more jobs, a higher standard of living and higher wages.\n They want the rich to be taxed (especially the nobles in vilage 3) more and they want less classism.\n They are scared of magic and witches. \n Remember this is the biggest village",
-            200
+            200,
+            null
         );
 
         Village village3 = new Village(
             "Nobles",
             setPrompts(3),
             "They are very rich and powerful people who want lower taxes. \n They feel threatened by witches",
-            100
+            100,
+            null
         );
 
         Village village4 = new Village(
             "The Outlaws",
             setPrompts(4),
             "This has a high population of outlawed villagers due to their differences.\n These include criminals, adventurers and magicians.\n They love chaos and they love to do favours for a reward",
-            100
+            100,
+            null
         );
     }
 
