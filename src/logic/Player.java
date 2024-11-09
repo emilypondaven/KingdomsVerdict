@@ -2,6 +2,7 @@ package logic;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.awt.image.RasterFormatException;
 
 import gui.GameView;
 import io.Resources;
@@ -95,16 +96,18 @@ public class Player {
 
     // Setter for reportReporting
     public void setReportReporting(boolean reportReporting) {
-        this.reportReporting = reportReporting;
+        this.reporterReporting = reportReporting;
     }
 
     // Method to toggle reportReporting (change from true to false or false to true)
     public void toggleReportReporting() {
-        this.reportReporting = !this.reportReporting;
+        this.reporterReporting = !this.reporterReporting;
     }
 
     public String playerImageString;
+    public BufferedImage currentImage = null;
     private int animationStage = 0;
+    private static final int SPRITE_WIDTH = 48;
 
     public Image getPlayerSprite() {
         if (idle) {
@@ -124,9 +127,25 @@ public class Player {
             }
         }
         BufferedImage image = Resources.getImage(playerImageString);
-        int spriteWidth = 48;
-        animationStage = (animationStage + 1) % (image.getWidth() / spriteWidth);
+        currentImage = image;
         // System.err.println("animation stage " + animationStage);
-        return image.getSubimage(14 + animationStage * spriteWidth, 5, 20, 28).getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        try {
+            System.out.println(animationStage);
+            return image.getSubimage(14 + animationStage * SPRITE_WIDTH, 5, 20, 28).getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        }
+        catch (RasterFormatException e) {
+            animationStage = 0;
+            return getPlayerSprite();
+        } 
+    }
+
+    public void setIdle() {
+        // animationStage = 0;
+        idle = true;
+    }
+
+    public void updateAnimationStage() {
+        // if (animationStage > (currentImage.getWidth() / SPRITE_WIDTH)) animationStage = 0;
+        animationStage = (animationStage + 1) % (currentImage.getWidth() / SPRITE_WIDTH);
     }
 }

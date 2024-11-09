@@ -13,7 +13,7 @@ public class GameEnv {
         player = new Player();
 
         // Add everything to the villages
-        initialiseVillages();
+        // initialiseVillages();
     }
 
     public Player getPlayer() {
@@ -36,7 +36,7 @@ public class GameEnv {
         player.changeY(direction);
     }
 
-    public void initialiseVillages() {
+    /* public void initialiseVillages() {
         Village village1 = new Village(
             "Climate Change Spiritualists",
             setPrompts(1),
@@ -64,9 +64,9 @@ public class GameEnv {
             "This has a high population of outlawed villagers due to their differences.\n These include criminals, adventurers and magicians.\n They love chaos and they love to do favours for a reward",
             100
         );
-    }
+    } */
 
-    public List<Prompt> setPrompts(int villageNum) {
+   /*  public List<Prompt> setPrompts(int villageNum) {
         List<Prompt> prompts = new ArrayList<>();
         Prompt prompt1;
         Prompt prompt2;
@@ -319,5 +319,5 @@ public class GameEnv {
             return prompts;
             
         }
-    }
+    } */
 }
