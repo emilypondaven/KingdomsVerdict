@@ -10,11 +10,11 @@ public class PromptAction {
     private int[] villagerPopulationChange;
     private String[] postActionMessages; //1st item is if the reporter is reporting, 2nd item is the message if it isn't
     
-    public PromptAction(String message, int goldChange, int[] villageVoterChange, int[] reporterNotHereChange, int[] villagerPopulationChange, String[] postActionMessages) {
+    public PromptAction(String message, int goldChange, int[] villageVoterChange, int[] reporterNotReportingChange, int[] villagerPopulationChange, String[] postActionMessages) {
         this.promptActionMessage = message;
         this.goldChange = goldChange;
         this.villageVoterChange = villageVoterChange;
-        this.reporterNotReportingChange = reporterNotHereChange;
+        this.reporterNotReportingChange = reporterNotReportingChange;
         this.villagerPopulationChange = villagerPopulationChange;
         this.postActionMessages = postActionMessages;
     }
@@ -39,7 +39,13 @@ public class PromptAction {
 
     // Getter and Setter for villageVoterChange
     public int[] getVillageVoterChange() {
-        return villageVoterChange;
+        int[] change = villageVoterChange;
+        if (Player.isReporterReporting()) {
+            for (int k = 0; k < 4; k++) {
+                change[k] = change[k] + reporterNotReportingChange[k];
+            }
+        }
+        return change;
     }
 
     public void setVillageVoterChange(int[] villageVoterChange) {

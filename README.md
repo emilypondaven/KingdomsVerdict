@@ -30,3 +30,8 @@ population 100
 Village 1:
 The farmers are using up too much water. Take their jobs away!
 1. kill farmers (who are commonfolk)
+        
+2.
+
+3.
+
