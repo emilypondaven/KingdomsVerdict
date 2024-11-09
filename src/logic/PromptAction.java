@@ -1,3 +1,4 @@
+package logic;
 import javax.swing.SwingUtilities;
 import gui.Window;
 
