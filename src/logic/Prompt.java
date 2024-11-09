@@ -16,7 +16,12 @@ public class Prompt {
         promptActions.add(new PromptAction(message, goldChange, villageVoterChange, reporterNotHereChange, villagerPopulationChange, postActionMessages));
     }
 
-    public List<PromptAction> getPromptActions() {
-        
+    public List<String> getPromptActionMessages() {
+        List<String> promptActionMessages = new ArrayList<>();
+        for (int i=0; i<3; i++) {
+            promptActionMessages.add(promptActions.get(i).getPromptActionMessage());
+        }
+
+        return promptActionMessages;
     }
 }

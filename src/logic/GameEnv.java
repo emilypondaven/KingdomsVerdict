@@ -67,9 +67,65 @@ public class GameEnv {
     }
 
     public List<Prompt> setPrompts(int villageNum) {
+        List<Prompt> prompts = new ArrayList<>();
         switch (villageNum) {
             case 1:
-                Prompt prompt1 = new Prompt("The farmers in another village are using up too much water.");
+                Prompt prompt1 = new Prompt("The farmers from the common folk village are using up too much water.");
+                prompt1.addPromptAction(
+                    "Kill farmers from common folk village and steal their gold",
+                    30,
+                    new int[] {30, -40, 0, 0},
+                    new int[] {0, 40, 0, 0},
+                    new int[] {0, -30, 0, 0},
+                    new String[] {"The kingdom's reporter announced to the commonfolk that you killed their farmers. \n They were not happy about that", "You killed the farmers and stole their gold but no commonfolk knows about it..."}
+
+                );
+                prompt1.addPromptAction(
+                    "Make the promise",
+                    0,
+                    new int[] {20, -10, 0, 0},
+                    new int[] {0, 10, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The kingdom's reporter announced to the commonfolk that you promised to talk their jobs away. \n They were not happy about that", "The climate change spiritualist are happy about the promise but the commonfolk no nothing about the promise..."}
+
+                );
+                prompt1.addPromptAction(
+                    "Refuse to help",
+                    0,
+                    new int[] {-20, 30, 0, 0},
+                    new int[] {0, -30, 0, 0},
+                    new int[] {0, 0, 0, 0},
+                    new String[] {"The kingdom's reporter announced to the commonfolk that you wanted the farmers to keep their jobs. \n They were ecstatic", "The commonfolk don't know about your refusal."}
+                );
+                prompts.add(prompt1);
+                
+                Prompt prompt2= new Prompt("");
+                prompt2.addPromptAction(
+
+                );
+                prompt2.addPromptAction(
+
+                );
+                prompt2.addPromptAction(
+
+                );
+                prompts.add(prompt2);
+
+                Prompt prompt3 = new Prompt("");
+                prompt3.addPromptAction(
+
+                );
+                prompt3.addPromptAction(
+
+                );
+                prompt3.addPromptAction(
+
+                );
+
+                prompts.add(prompt3);
+                
+            case 2:
+            Prompt prompt1 = new Prompt("The farmers in another village are using up too much water.");
                 prompt1.addPromptAction(
 
                 );
@@ -77,12 +133,112 @@ public class GameEnv {
 
                 );
                 prompt1.addPromptAction(
+
+                );
+                prompts.add(prompt1);
+                
+                Prompt prompt2= new Prompt("The farmers in another village are using up too much water.");
+                prompt2.addPromptAction(
+
+                );
+                prompt2.addPromptAction(
+
+                );
+                prompt2.addPromptAction(
+
+                );
+                prompts.add(prompt2);
+
+                Prompt prompt3 = new Prompt("The farmers in another village are using up too much water.");
+                prompt3.addPromptAction(
+
+                );
+                prompt3.addPromptAction(
+
+                );
+                prompt3.addPromptAction(
 
                 );
                 
-            case 2:
+                prompts.add(prompt3);
+
             case 3:
+            Prompt prompt1 = new Prompt("The farmers in another village are using up too much water.");
+                prompt1.addPromptAction(
+
+                );
+                prompt1.addPromptAction(
+
+                );
+                prompt1.addPromptAction(
+
+                );
+                prompts.add(prompt1);
+                
+                Prompt prompt2= new Prompt("The farmers in another village are using up too much water.");
+                prompt2.addPromptAction(
+
+                );
+                prompt2.addPromptAction(
+
+                );
+                prompt2.addPromptAction(
+
+                );
+                prompts.add(prompt2);
+
+                Prompt prompt3 = new Prompt("The farmers in another village are using up too much water.");
+                prompt3.addPromptAction(
+
+                );
+                prompt3.addPromptAction(
+
+                );
+                prompt3.addPromptAction(
+
+                );
+                
+                prompts.add(prompt3);
+
             case 4:
+            Prompt prompt1 = new Prompt("The farmers in another village are using up too much water.");
+                prompt1.addPromptAction(
+
+                );
+                prompt1.addPromptAction(
+
+                );
+                prompt1.addPromptAction(
+
+                );
+                prompts.add(prompt1);
+                
+                Prompt prompt2= new Prompt("The farmers in another village are using up too much water.");
+                prompt2.addPromptAction(
+
+                );
+                prompt2.addPromptAction(
+
+                );
+                prompt2.addPromptAction(
+
+                );
+                prompts.add(prompt2);
+
+                Prompt prompt3 = new Prompt("The farmers in another village are using up too much water.");
+                prompt3.addPromptAction(
+
+                );
+                prompt3.addPromptAction(
+
+                );
+                prompt3.addPromptAction(
+
+                );
+                
+                prompts.add(prompt3);
+        
+            return prompts;
             
         }
     }
