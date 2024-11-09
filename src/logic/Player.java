@@ -17,7 +17,7 @@ public class Player {
     private static boolean reporterReporting = true;
     private Direction currentDirection;
     private boolean idle = true;
-    private int voteCount = 80;
+    private static int voteCount = 80;
 
     enum Direction {
         UP,
@@ -186,7 +186,7 @@ public class Player {
         }
     }
 
-    public int getVoteCount() {
+    public static int getVoteCount() {
         return voteCount;
     }
 }
