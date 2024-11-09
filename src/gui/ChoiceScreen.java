@@ -36,15 +36,23 @@ public class ChoiceScreen extends JPanel {
         promptLabel = createLabel(promptPanel, prompt.getPromptMessage(), Color.BLACK);
         promptLabel.setFont(new Font("Arial", Font.PLAIN, 24));  // Make the prompt text larger
         promptPanel.setBackground(Color.WHITE);
-        window.add(promptPanel, BorderLayout.CENTER);
+        window.getContentPane().add(promptPanel, BorderLayout.CENTER);
 
         // Create a panel for the bottom section (buttons)
-        buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));  // Use FlowLayout to center the buttons horizontally
+        buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS)); // Vertical alignment of buttons
         buttonPanel.setBackground(Color.WHITE);
-
+        // Add spacing between buttons with rigid area
+        int buttonSpacing = 10;
+        // Add the buttons with spacing in between
         prompt1Button = createButton(window, buttonPanel, player, prompt.getPromptAction(0), Color.GREEN, Color.WHITE);
+        buttonPanel.add(prompt1Button);
+        buttonPanel.add(Box.createRigidArea(new Dimension(0, buttonSpacing))); // Add vertical spacing
         prompt2Button = createButton(window, buttonPanel, player, prompt.getPromptAction(1), Color.GREEN, Color.WHITE);
+        buttonPanel.add(prompt2Button);
+        buttonPanel.add(Box.createRigidArea(new Dimension(0, buttonSpacing))); // Add vertical spacing
         prompt3Button = createButton(window, buttonPanel, player, prompt.getPromptAction(2), Color.GREEN, Color.WHITE);
+        buttonPanel.add(prompt3Button);
 
         window.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
@@ -80,7 +88,7 @@ public class ChoiceScreen extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // Action to be performed when the button is clicked
                 player.gameTurn(prompt);
-                // removePanel(window);
+                removePanel(window);
             }
         });
         
@@ -88,9 +96,9 @@ public class ChoiceScreen extends JPanel {
         return button;
     }
 
-    // public void removePanel(JFrame window) {
-    //     window.remove(topPanel);
-    //     window.revalidate();
-    //     window.repaint();
-    // }
+    public void removePanel(JDialog window) {
+        window.remove(topPanel);
+        window.revalidate();
+        window.repaint();
+    }
 }
