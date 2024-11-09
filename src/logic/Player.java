@@ -83,19 +83,14 @@ public class Player {
         return gold;
     }
 
-    // Setter for gold
-    public void setGold(int gold) {
-        this.gold = gold;
-    }
-
     // Method to increase gold by a specific amount (you could also use a "change" method if you'd prefer)
-    public void changeGold(int amount) {
-        this.gold += amount;
+    public static void changeGold(int amount) {
+        gold += amount;
     }
 
-    // Getter for reportReporting
-    public boolean isReportReporting() {
-        return reportReporting;
+    // Getter for reporterReporting
+    public static boolean isReporterReporting() {
+        return reporterReporting;
     }
 
     // Setter for reportReporting

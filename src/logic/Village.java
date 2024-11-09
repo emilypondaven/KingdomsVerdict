@@ -7,22 +7,22 @@ public class Village {
     private List<Prompt> prompts = new ArrayList<>();
     private int population;
     private String description;
+    private Boolean villageDead;
+    private int villageVotes;
 
+    public Village(String name, List<Prompt> prompts, String description, int population) {
+        this.name = name;
+        this.prompts = prompts;
+        this.description = description;
+        this.population = population;
+    }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public void addPrompt(Prompt prompt) {
@@ -38,5 +38,30 @@ public class Village {
         }
 
         return prompt;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
+
+    // Finished all prompts or killed all villagers
+    public void setVillageDead(boolean villageDead) {
+        this.villageDead = villageDead;
+    }
+
+    public Boolean getVillageDead() {
+        return villageDead;
+    }
+
+    public void setVillageVotes(int villageVotes) {
+        this.villageVotes = villageVotes;
+    }
+
+    public int setVillageVotes() {
+        return villageVotes;
     }
 }
