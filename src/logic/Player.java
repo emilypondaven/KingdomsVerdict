@@ -14,10 +14,10 @@ public class Player {
     private int width, height;
 
     private static int gold = 100;
-    private static boolean reportReporting = true;
+    private static boolean reporterReporting = true;
     private Direction currentDirection;
     private boolean idle = true;
-    private int voteCount = 0;
+    private int voteCount = 80;
 
     enum Direction {
         UP,
@@ -92,17 +92,17 @@ public class Player {
 
     // Getter for reporterReporting
     public static boolean isReporterReporting() {
-        return reportReporting;
+        return reporterReporting;
     }
 
     // Setter for reportReporting
     public void setReportReporting(boolean reportReporting) {
-        this.reportReporting = reportReporting;
+        this.reporterReporting = reportReporting;
     }
 
     // Method to toggle reportReporting (change from true to false or false to true)
     public void toggleReportReporting() {
-        this.reportReporting = !this.reportReporting;
+        this.reporterReporting = !this.reporterReporting;
     }
 
     public String playerImageString;
@@ -149,4 +149,9 @@ public class Player {
         // if (animationStage > (currentImage.getWidth() / SPRITE_WIDTH)) animationStage = 0;
         animationStage = (animationStage + 1) % (currentImage.getWidth() / SPRITE_WIDTH);
     }
+
+    public void action(PromptAction action) {
+
+    }
+
 }
