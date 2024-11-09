@@ -17,7 +17,7 @@ public class Player {
     private static boolean reporterReporting = true;
     private Direction currentDirection;
     private boolean idle = true;
-    private int voteCount = 0;
+    private int voteCount = 80;
 
     enum Direction {
         UP,
@@ -149,4 +149,9 @@ public class Player {
         // if (animationStage > (currentImage.getWidth() / SPRITE_WIDTH)) animationStage = 0;
         animationStage = (animationStage + 1) % (currentImage.getWidth() / SPRITE_WIDTH);
     }
+
+    public void action(PromptAction action) {
+
+    }
+
 }

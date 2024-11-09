@@ -38,7 +38,6 @@ public class Village {
             prompt = prompts.get(0);
             prompts.remove(0);
         }
-
         return prompt;
     }
 
@@ -63,7 +62,17 @@ public class Village {
         this.villageVotes = villageVotes;
     }
 
-    public int setVillageVotes() {
+    public int getVillageVotes() {
         return villageVotes;
+    }
+
+    public void changeVillageVotes(int change) {
+        villageVotes = villageVotes + change;
+        if (villageVotes > population) {
+            villageVotes = population;
+        }
+        if (villageVotes < 0) {
+            villageVotes = 0;
+        }
     }
 }
