@@ -17,6 +17,7 @@ public class Player {
     private static boolean reportReporting = true;
     private Direction currentDirection;
     private boolean idle = true;
+    private int voteCount = 0;
 
     enum Direction {
         UP,
@@ -25,10 +26,10 @@ public class Player {
     }
 
     public Player() {
-        x = 0;
-        y = 0;
         width = 60;
         height = 84;
+        x = (int) GameView.DEFAULT_DIMENSIONS.getWidth() / 2 - width;
+        y = (int) GameView.DEFAULT_DIMENSIONS.getHeight() / 2 - height;
         currentDirection = Direction.DOWN;
         playerImageString = "Player_D_Idle.png";
     }
@@ -91,17 +92,17 @@ public class Player {
 
     // Getter for reporterReporting
     public static boolean isReporterReporting() {
-        return reporterReporting;
+        return reportReporting;
     }
 
     // Setter for reportReporting
     public void setReportReporting(boolean reportReporting) {
-        this.reporterReporting = reportReporting;
+        this.reportReporting = reportReporting;
     }
 
     // Method to toggle reportReporting (change from true to false or false to true)
     public void toggleReportReporting() {
-        this.reporterReporting = !this.reporterReporting;
+        this.reportReporting = !this.reportReporting;
     }
 
     public String playerImageString;

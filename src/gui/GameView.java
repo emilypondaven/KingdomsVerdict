@@ -5,11 +5,14 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+
 import javax.swing.Timer;
 
 import javax.swing.JPanel;
 
 import controls.GameKeyboardListener;
+import io.Resources;
 import logic.GameEnv;
 
 public class GameView extends JPanel {
@@ -25,7 +28,7 @@ public class GameView extends JPanel {
         super();
         setSize(DEFAULT_DIMENSIONS);
         setPreferredSize(DEFAULT_DIMENSIONS);
-        setBackground(Color.GREEN);
+        setBackground(new Color(149, 201, 75));
         gameEnvironment = new GameEnv();
         addKeyListener(new GameKeyboardListener(this,gameEnvironment));
         setFocusable(true);
@@ -34,9 +37,9 @@ public class GameView extends JPanel {
         gameLoopTimer = new Timer(TARGET_DELAY, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                repaint(); // Repaint the screen
                 gameEnvironment.getPlayer().setIdle();
                 updateGame(); // Update game state (e.g., move player)
+                repaint(); // Repaint the screen
             }
         });
 
@@ -50,6 +53,15 @@ public class GameView extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        // g.drawImage(Resources.getImage("background.png").getScaledInstance((int)DEFAULT_DIMENSIONS.getWidth(), (int)DEFAULT_DIMENSIONS.getHeight(), Image.SCALE_SMOOTH), 0, 0, this);
+        g.drawImage(Resources.getImage("commonfolkVillage.png"), 20, 20, this);
+        BufferedImage outlawsVillage = Resources.getImage("outlawsVillage.png");
+        g.drawImage(outlawsVillage, (int) DEFAULT_DIMENSIONS.getWidth() - 20 - outlawsVillage.getWidth(), 20, this);
+        BufferedImage environmentVillage = Resources.getImage("environmentVillage.png");
+        g.drawImage(environmentVillage, 20, (int) DEFAULT_DIMENSIONS.getHeight() - 20 - environmentVillage.getHeight(), this);
+        BufferedImage nobleVillage = Resources.getImage("nobleVillage.png");
+        g.drawImage(nobleVillage, (int) DEFAULT_DIMENSIONS.getWidth() - 20 - nobleVillage.getWidth(), (int) DEFAULT_DIMENSIONS.getHeight() - 20 - nobleVillage.getHeight(), this);
+        // g.drawImage(Resources.getImage(TOOL_TIP_TEXT_KEY), ABORT, TARGET_DELAY, instance)
         g.drawImage(gameEnvironment.getPlayer().getPlayerSprite(), gameEnvironment.getPlayerX(), gameEnvironment.getPlayerY(), this);
     }
 

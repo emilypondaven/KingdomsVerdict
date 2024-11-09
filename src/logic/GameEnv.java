@@ -7,7 +7,7 @@ public class GameEnv {
     //HAve a way of representing entitites
     //Most logical decisions will happen here
     private Player player;
-    private List<Village> villages = new ArrayList<>();
+    private List<Village> villages = new ArrayList<Village>();
 
     public GameEnv() {
         player = new Player();
