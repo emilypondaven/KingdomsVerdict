@@ -78,9 +78,10 @@ public class ChoiceScreen extends JPanel {
     }
 
     private JButton createButton(JDialog window, JPanel panel, Player player, PromptAction prompt, Color backgroundColor, Color textColor) {
-        JButton button = new JButton(prompt.getPostActionMessage());
+        JButton button = new JButton(prompt.getPromptActionMessage());
         button.setBackground(backgroundColor);
         button.setForeground(textColor);
+
         button.setFocusPainted(false);
         // Add the action listener
         button.addActionListener(new ActionListener() {

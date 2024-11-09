@@ -29,6 +29,7 @@ public class GameView extends JPanel {
     private Timer gameLoopTimer;
     private int votes;
     private int population;
+    private int gold;
     
         public GameView() {
             super();
@@ -41,6 +42,7 @@ public class GameView extends JPanel {
             setFocusCycleRoot(true);
             votes = gameEnvironment.getPlayer().getVoteCount();
             population = gameEnvironment.getPlayer().getTotalPopulation();
+            gold = gameEnvironment.getPlayer().getGold();
             // Initialize game loop Timer
             gameLoopTimer = new Timer(TARGET_DELAY, new ActionListener() {
                 @Override
@@ -70,6 +72,7 @@ public class GameView extends JPanel {
             g.setFont(Resources.getFont("Jacquard12-Regular.ttf"));
             g.drawString("Common Folk Village", 15, 30);
             g.drawString("Votes: " + votes + " /" + population, 400, 30);
+            g.drawString("Gold: " + gold, 700, 30);
             g.drawImage(Resources.getImage("commonfolkVillage.png"), PADDING, PADDING, this);
             BufferedImage outlawsVillage = Resources.getImage("outlawVillage.png");
             g.drawString("Outlaw Village", 850, 30);
@@ -88,6 +91,7 @@ public class GameView extends JPanel {
             // update the animation cycle
             gameEnvironment.getPlayer().updateAnimationStage();
             votes = gameEnvironment.getPlayer().getVoteCount();
+            gold = gameEnvironment.getPlayer().getGold();
             population = gameEnvironment.getPlayer().getTotalPopulation();
         if (gameEnvironment.getCurrentVillage() != null) {
             //make the choce screen.
@@ -103,7 +107,6 @@ public class GameView extends JPanel {
             // Make the dialog visible
             dialog.setLocationRelativeTo(Window.getInstance()); // Center the dialog relative to the main window
             dialog.setVisible(true); // Show the dialog
-
             screen.createScreen(dialog, gameEnvironment.getCurrentVillage().getPrompt(), gameEnvironment.getPlayer(), gameEnvironment.getCurrentVillage());
             gameEnvironment.resetCurrentVillage();
             System.out.println("AFTER");
