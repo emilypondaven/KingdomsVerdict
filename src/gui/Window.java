@@ -9,7 +9,7 @@ public class Window extends JFrame{
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-        Resources.loadAllImages();
+        Resources.loadAllSprites();
         add(GameView.getInstance());
         pack();
     }

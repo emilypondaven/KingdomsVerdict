@@ -50,9 +50,12 @@ public class GameKeyboardListener implements KeyListener{
         }
 
         // Update the player's position
-        gameEnvironment.movePlayerX(deltaX);
-        gameEnvironment.movePlayerY(deltaY);
-
+        if (Math.abs(deltaX) > 0) {
+            gameEnvironment.movePlayerX(deltaX); 
+        }
+        if (Math.abs(deltaY) > 0) {
+            gameEnvironment.movePlayerY(deltaY);
+        }
         // Repaint the game view
         gameView.repaint();
     }
