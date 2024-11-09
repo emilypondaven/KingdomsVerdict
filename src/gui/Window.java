@@ -10,6 +10,7 @@ public class Window extends JFrame{
         setResizable(false);
         setVisible(true);
         Resources.loadAllSprites();
+        Resources.loadAllFonts();
         add(GameView.getInstance());
         pack();
     }

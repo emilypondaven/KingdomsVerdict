@@ -51,9 +51,11 @@ public class GameKeyboardListener implements KeyListener{
 
         // Update the player's position
         if (Math.abs(deltaX) > 0) {
+            System.out.println("x moved");
             gameEnvironment.movePlayerX(deltaX); 
         }
         if (Math.abs(deltaY) > 0) {
+            System.out.println("y moved");
             gameEnvironment.movePlayerY(deltaY);
         }
         // Repaint the game view
