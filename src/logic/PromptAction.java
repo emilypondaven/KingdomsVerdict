@@ -6,13 +6,15 @@ public class PromptAction {
     private String promptActionMessage;
     private int goldChange;
     private int[] villageVoterChange;
-    private int[] reporterNotHereChange;
+    private int[] reporterReportingChange;
+    private String[] postActionMessages; //1st item is if the reporter is reporting, 2nd item is the message if it isn't
     
-    public PromptAction(String message, int goldChange, int[] villageVoterChange, int[] reporterNotHereChange) {
+    public PromptAction(String message, int goldChange, int[] villageVoterChange, int[] reporterNotHereChange, String[] postActionMessages) {
         this.promptActionMessage = message;
         this.goldChange = goldChange;
         this.villageVoterChange = villageVoterChange;
-        this.reporterNotHereChange = reporterNotHereChange;
+        this.reporterReportingChange = reporterNotHereChange;
+        this.postActionMessages = postActionMessages;
     }
 
     // Getter and Setter for promptActionMessage
