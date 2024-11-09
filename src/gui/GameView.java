@@ -72,7 +72,7 @@ public class GameView extends JPanel {
             g.setFont(Resources.getFont("Jacquard12-Regular.ttf"));
             g.drawString("Common Folk Village", 15, 30);
             g.drawString("Votes: " + votes + " /" + population, 400, 30);
-            g.drawString("Gold: " + gold, 700, 30);
+            g.drawString("Gold: " + gold, 680, 30);
             g.drawImage(Resources.getImage("commonfolkVillage.png"), PADDING, PADDING, this);
             BufferedImage outlawsVillage = Resources.getImage("outlawVillage.png");
             g.drawString("Outlaw Village", 850, 30);
