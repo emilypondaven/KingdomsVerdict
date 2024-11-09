@@ -150,10 +150,13 @@ public class Player {
         animationStage = (animationStage + 1) % (currentImage.getWidth() / SPRITE_WIDTH);
     }
 
-    public void action(PromptAction action) {
+    //NEED TO DISPLAY THE STRING RETURNED HERE
+    public String action(PromptAction action) {
         changeGold(action.getGoldChange());
         changeVillageVotes(action.getVillageVoterChange());
         changePopultion(action.getVillageVoterChange());
+
+        return action.getPromptActionMessage();
     }
 
     public void changeVillageVotes(int[] changesInVotes) {
