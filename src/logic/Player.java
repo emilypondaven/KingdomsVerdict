@@ -18,6 +18,7 @@ public class Player {
     private Direction currentDirection;
     private boolean idle = true;
     private static int voteCount = 80;
+    private static int totalPopulation = 400;
 
     enum Direction {
         UP,
@@ -180,13 +181,34 @@ public class Player {
         return true;
     }
 
-    public void gameTurn(){
-        while (!allVillagesDead()) {
-
-        }
+    public void gameTurn(PromptAction action){
+        String message = action.getPromptActionMessage()
+        action(action);
+        updateVoteCount();
+        updateTotalPopulation();
     }
 
     public static int getVoteCount() {
         return voteCount;
+    }
+
+    public void updateVoteCount() {
+        int total = 0;
+        for (int k = 0 ; k < 4; k++) {
+            total = total + (GameEnv.villages.get(k)).getVillageVotes();
+        }
+        voteCount = total;
+    }
+
+    public static int getTotalPopulation() {
+        return totalPopulation;
+    }
+
+    public void updateTotalPopulation() {
+        int total = 0;
+        for (int k = 0 ; k < 4; k++) {
+            total = total + (GameEnv.villages.get(k)).getPopulation();
+        }
+        totalPopulation = total;
     }
 }
