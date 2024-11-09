@@ -8,21 +8,19 @@ public class Village {
     private int population;
     private String description;
 
+    public Village(String name, List<Prompt> prompts, String description, int population) {
+        this.name = name;
+        this.prompts = prompts;
+        this.description = description;
+        this.population = population;
+    }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public void addPrompt(Prompt prompt) {
@@ -38,5 +36,13 @@ public class Village {
         }
 
         return prompt;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
     }
 }
