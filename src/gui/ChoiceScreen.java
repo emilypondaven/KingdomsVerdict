@@ -43,14 +43,14 @@ public class ChoiceScreen extends JPanel {
         buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));  // Use FlowLayout to center the buttons horizontally
         buttonPanel.setBackground(Color.WHITE);
 
-        prompt1Button = createButton(buttonPanel, player, prompt.getPromptAction(0), Color.GREEN, Color.WHITE);
-        prompt2Button = createButton(buttonPanel, player, prompt.getPromptAction(1), Color.GREEN, Color.WHITE);
-        prompt3Button = createButton(buttonPanel, player, prompt.getPromptAction(2), Color.GREEN, Color.WHITE);
+        prompt1Button = createButton(window, buttonPanel, player, prompt.getPromptAction(0), Color.GREEN, Color.WHITE);
+        prompt2Button = createButton(window, buttonPanel, player, prompt.getPromptAction(1), Color.GREEN, Color.WHITE);
+        prompt3Button = createButton(window, buttonPanel, player, prompt.getPromptAction(2), Color.GREEN, Color.WHITE);
 
         window.add(buttonPanel, BorderLayout.SOUTH);
 
         window.add(topPanel, BorderLayout.NORTH);
-        window.pack();
+        // window.pack();
         window.setVisible(true);
     }
 
@@ -68,7 +68,7 @@ public class ChoiceScreen extends JPanel {
         return label;
     }
 
-    private JButton createButton(JPanel panel, Player player, PromptAction prompt, Color backgroundColor, Color textColor) {
+    private JButton createButton(JFrame window, JPanel panel, Player player, PromptAction prompt, Color backgroundColor, Color textColor) {
         JButton button = new JButton(prompt.getPostActionMessage());
         button.setBackground(backgroundColor);
         button.setForeground(textColor);
@@ -79,6 +79,7 @@ public class ChoiceScreen extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // Action to be performed when the button is clicked
                 player.gameTurn(prompt);
+                removePanel(window);
             }
         });
         
