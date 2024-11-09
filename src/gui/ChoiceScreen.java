@@ -16,9 +16,8 @@ public class ChoiceScreen extends JPanel {
     JLabel promptLabel, currentVotesLabel, villagePopulationLabel, villageDescriptionLabel;
     JButton prompt1Button, prompt2Button, prompt3Button;
 
-    public void createScreen(JFrame window, Prompt prompt, Player player, Village village) {
-        window.setLayout(new BorderLayout());  // Set the overall layout to BorderLayout for easier positioning
-        System.out.println(prompt.getPromptMessage());
+    public void createScreen(JDialog window, Prompt prompt, Player player, Village village) {
+
         // Create a panel for the top section with current votes and village population
         topPanel = new JPanel(new GridLayout(3, 1));  // Use GridLayout to stack the votes and population vertically
         topPanel.setBackground(Color.WHITE);
@@ -47,11 +46,13 @@ public class ChoiceScreen extends JPanel {
         prompt2Button = createButton(window, buttonPanel, player, prompt.getPromptAction(1), Color.GREEN, Color.WHITE);
         prompt3Button = createButton(window, buttonPanel, player, prompt.getPromptAction(2), Color.GREEN, Color.WHITE);
 
-        window.add(buttonPanel, BorderLayout.SOUTH);
+        window.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
-        window.add(topPanel, BorderLayout.NORTH);
+        window.getContentPane().add(topPanel, BorderLayout.NORTH);
         // window.pack();
         window.setVisible(true);
+        window.revalidate();
+        window.repaint();
     }
 
     private JPanel createPanel(JPanel parentPanel, int x, int y, int width, int height) {
@@ -68,7 +69,7 @@ public class ChoiceScreen extends JPanel {
         return label;
     }
 
-    private JButton createButton(JFrame window, JPanel panel, Player player, PromptAction prompt, Color backgroundColor, Color textColor) {
+    private JButton createButton(JDialog window, JPanel panel, Player player, PromptAction prompt, Color backgroundColor, Color textColor) {
         JButton button = new JButton(prompt.getPostActionMessage());
         button.setBackground(backgroundColor);
         button.setForeground(textColor);
@@ -79,7 +80,7 @@ public class ChoiceScreen extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // Action to be performed when the button is clicked
                 player.gameTurn(prompt);
-                removePanel(window);
+                // removePanel(window);
             }
         });
         
@@ -87,10 +88,9 @@ public class ChoiceScreen extends JPanel {
         return button;
     }
 
-    public void removePanel(JFrame window) {
-        window.remove(topPanel);
-        window.revalidate();
-        window.repaint();
-
-    }
+    // public void removePanel(JFrame window) {
+    //     window.remove(topPanel);
+    //     window.revalidate();
+    //     window.repaint();
+    // }
 }
