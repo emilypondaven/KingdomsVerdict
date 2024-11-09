@@ -67,7 +67,7 @@ public class Village {
         return villageVotes;
     }
 
-    public void changeVillageVotes(int change) {
+    public void changeVillageVote(int change) {
         villageVotes = villageVotes + change;
         if (villageVotes > population) {
             villageVotes = population;
@@ -77,5 +77,10 @@ public class Village {
         }
     }
 
-    // public
+    public void changePopulation(int change) {
+        population = population + change;
+        if (population < 0) {
+            population = 0;
+        }
+    }
 }
