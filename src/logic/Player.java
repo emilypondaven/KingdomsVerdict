@@ -26,8 +26,8 @@ public class Player {
     }
 
     public Player() {
-        width = 60;
-        height = 84;
+        width = 40;
+        height = 56;
         x = (int) GameView.DEFAULT_DIMENSIONS.getWidth() / 2 - width;
         y = (int) GameView.DEFAULT_DIMENSIONS.getHeight() / 2 - height;
         currentDirection = Direction.DOWN;
@@ -112,7 +112,7 @@ public class Player {
 
     public Image getPlayerSprite() {
         if (idle) {
-            System.out.println("IDLE");
+            // System.out.println("IDLE");
             switch (currentDirection) {
                 case DOWN:
                     playerImageString = "Player_D_Idle.png";
@@ -131,7 +131,7 @@ public class Player {
         currentImage = image;
         // System.err.println("animation stage " + animationStage);
         try {
-            System.out.println(animationStage);
+            // System.out.println(animationStage);
             return image.getSubimage(14 + animationStage * SPRITE_WIDTH, 5, 20, 28).getScaledInstance(width, height, Image.SCALE_SMOOTH);
         }
         catch (RasterFormatException e) {
