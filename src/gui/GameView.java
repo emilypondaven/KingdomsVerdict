@@ -34,8 +34,9 @@ public class GameView extends JPanel {
         gameLoopTimer = new Timer(TARGET_DELAY, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // updateGame(); // Update game state (e.g., move player)
                 repaint(); // Repaint the screen
+                gameEnvironment.getPlayer().setIdle();
+                updateGame(); // Update game state (e.g., move player)
             }
         });
 
@@ -53,8 +54,8 @@ public class GameView extends JPanel {
     }
 
     // // Method to update game state, e.g., move player
-    // private void updateGame() {
-    //     // update the animation cycle
-    //     gameEnvironment.getPlayer().updateAnimationStage();
-    // }
+    private void updateGame() {
+        // update the animation cycle
+        gameEnvironment.getPlayer().updateAnimationStage();
+    }
 }
