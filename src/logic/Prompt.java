@@ -12,8 +12,8 @@ public class Prompt {
         this.promptMessage = promptMessage;
     }
 
-    public void addPromptAction(String message, int goldChange, int[] villageVoterChange, int[] reporterNotHereChange, String[] postActionMessages) {
-        promptActions.add(new PromptAction(message, goldChange, villageVoterChange, reporterNotHereChange, postActionMessages));
+    public void addPromptAction(String message, int goldChange, int[] villageVoterChange, int[] reporterNotHereChange, int[] villagerPopulationChange, String[] postActionMessages) {
+        promptActions.add(new PromptAction(message, goldChange, villageVoterChange, reporterNotHereChange, villagerPopulationChange, postActionMessages));
     }
 
     public List<PromptAction> getPromptActions() {
