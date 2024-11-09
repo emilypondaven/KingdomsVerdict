@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 import javax.swing.Timer;
@@ -28,8 +29,9 @@ public class GameView extends JPanel {
     private static final int TARGET_DELAY = 1000 / TARGET_FPS; // Calculate delay between frames (in milliseconds)
     private Timer gameLoopTimer;
     private int votes;
-    private int population;
+    private int population = 500;
     private int gold;
+    private GameKeyboardListener keyListener;
     
         public GameView() {
             super();
@@ -37,7 +39,8 @@ public class GameView extends JPanel {
             setPreferredSize(DEFAULT_DIMENSIONS);
             // setBackground(new Color(149, 201, 75));
             gameEnvironment = new GameEnv();
-            addKeyListener(new GameKeyboardListener(this, gameEnvironment));
+            keyListener = new GameKeyboardListener(this, gameEnvironment);
+            addKeyListener(keyListener);
             setFocusable(true);
             setFocusCycleRoot(true);
             votes = gameEnvironment.getPlayer().getVoteCount();
@@ -95,10 +98,9 @@ public class GameView extends JPanel {
             population = gameEnvironment.getPlayer().getTotalPopulation();
         if (gameEnvironment.getCurrentVillage() != null) {
             //make the choce screen.
-            ChoiceScreen screen = new ChoiceScreen();
             System.out.println("BEFORE");
             gameEnvironment.resetPlayerCoords();
-
+            keyListener.resetPressedKeys();
              // Create the custom popup dialog
             JDialog dialog = new JDialog(Window.getInstance(), gameEnvironment.getCurrentVillage().getName(), true); // 'true' makes it modal
             dialog.setSize(1000, 400);
@@ -107,7 +109,7 @@ public class GameView extends JPanel {
             // Make the dialog visible
             dialog.setLocationRelativeTo(Window.getInstance()); // Center the dialog relative to the main window
             dialog.setVisible(true); // Show the dialog
-            screen.createScreen(dialog, gameEnvironment.getCurrentVillage().getPrompt(), gameEnvironment.getPlayer(), gameEnvironment.getCurrentVillage());
+            ChoiceScreen.createScreen(dialog, gameEnvironment.getCurrentVillage().getPrompt(), gameEnvironment.getPlayer(), gameEnvironment.getCurrentVillage());
             gameEnvironment.resetCurrentVillage();
             System.out.println("AFTER");
         }

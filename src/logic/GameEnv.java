@@ -79,7 +79,7 @@ public class GameEnv {
             "Common Folk",
             setPrompts(2),
             "They are hard working labourers who desire more jobs, a higher standard of living and higher wages.\n They want the rich to be taxed (especially the nobles in vilage 3) more and they want less classism.\n They are scared of magic and witches. \n Remember this is the biggest village",
-            300,
+            200,
             new int[][]{{40,194},{40,189}}
         );
 

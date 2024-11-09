@@ -20,6 +20,10 @@ public class GameKeyboardListener implements KeyListener{
         this.gameEnvironment = gameEnvironment;
     }
     
+    public void resetPressedKeys() {
+        pressedKeys = new HashSet<Character>();
+    }
+    
     @Override
     public void keyPressed(KeyEvent e) {
         pressedKeys.add(e.getKeyChar());
