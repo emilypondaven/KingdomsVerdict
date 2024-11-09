@@ -280,26 +280,26 @@ public class GameEnv {
             case 3:
                 prompt1 = new Prompt("The nobles feel they aren't treated fairly. They want tax reductions");
                 prompt1.addPromptAction(
-                    "Give them tax reduction, though this would anger the commonfolks",
-                    30,
-                    new int[] {-5, -10, 0, 0},
-                    new int[] {5, 0, 0, 0},
-                    new int[] {0, -30, 0, 0},
+                    "Promise them a tax reduction, though this may anger the commonfolks",
+                    0,
+                    new int[] {0, -40, 50, 0},
+                    new int[] {0, 40, 0, 0},
+                    new int[] {0, 0, 0, 0},
                     new String[] {"The tax reductions angered common folks and you've lost some of their votes", "The nobles are happy and the commonfolks know nothing"}
                 );
                 prompt1.addPromptAction(
-                    "",
-                    30,
-                    new int[] {-5, -10, 0, 0},
-                    new int[] {5, 0, 0, 0},
+                    "Refuse the tax reduction",
+                    0,
+                    new int[] {0, 40, -40, 0},
+                    new int[] {0, -40, 0, 0},
                     new int[] {0, -30, 0, 0},
-                    new String[] {"The spiritualists and commonfolk were furious with your decision", "The commonfolk were not happy with your decision"}
+                    new String[] {"The commonfolk heard about this and were happy with your decision", "The nobles were upset by your refusal"}
                 );
                 prompt1.addPromptAction(
-                    "That's unfair. Don't decrease taxes for them.",
-                    30,
-                    new int[] {-5, -10, 0, 0},
-                    new int[] {5, 0, 0, 0},
+                    "Ask for a bribe in order to convince you to reduce taxes if you become king",
+                    100,
+                    new int[] {0, 0, 0, 0},
+                    new int[] {0, 0, 0, 0},
                     new int[] {0, -30, 0, 0},
                     new String[] {"The nobles are very disappointed but you got some votes from the commonfolk villagers", "The nobles are dissapointed and the commonfolk villagers don't even know"}
                 );
