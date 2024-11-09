@@ -97,13 +97,13 @@ public class Player {
     }
 
     // Setter for reportReporting
-    public void setReportReporting(boolean reportReporting) {
-        this.reporterReporting = reportReporting;
+    public static void setReportReporting(boolean reportReporting) {
+        reporterReporting = reportReporting;
     }
 
     // Method to toggle reportReporting (change from true to false or false to true)
-    public void toggleReportReporting() {
-        this.reporterReporting = !this.reporterReporting;
+    public static void toggleReportReporting() {
+        reporterReporting = !reporterReporting;
     }
 
     public String playerImageString;
