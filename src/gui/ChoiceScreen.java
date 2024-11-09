@@ -3,6 +3,7 @@ package gui;
 import javax.swing.*;
 
 import logic.Player;
+import logic.Prompt;
 import logic.PromptAction;
 import logic.Village;
 
@@ -15,7 +16,7 @@ public class ChoiceScreen {
     JLabel promptLabel, currentVotesLabel, villagePopulationLabel, villageDescriptionLabel;
     JButton prompt1Button, prompt2Button, prompt3Button;
 
-    public void createScreen(JFrame window, String prompt, PromptAction promptAction1, PromptAction promptAction2, PromptAction promptAction3, Player player, Village village) {
+    public void createScreen(JFrame window, Prompt prompt, Player player, Village village) {
         window.setLayout(new BorderLayout());  // Set the overall layout to BorderLayout for easier positioning
 
         // Create a panel for the top section with current votes and village population
@@ -35,7 +36,7 @@ public class ChoiceScreen {
 
         // Create a panel for the center section (prompt)
         promptPanel = new JPanel();
-        promptLabel = createLabel(promptPanel, prompt, Color.BLACK);
+        promptLabel = createLabel(promptPanel, prompt.getPromptMessage(), Color.BLACK);
         promptLabel.setFont(new Font("Arial", Font.PLAIN, 24));  // Make the prompt text larger
         promptPanel.setBackground(Color.WHITE);
         window.add(promptPanel, BorderLayout.CENTER);
@@ -44,9 +45,9 @@ public class ChoiceScreen {
         buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));  // Use FlowLayout to center the buttons horizontally
         buttonPanel.setBackground(Color.WHITE);
 
-        prompt1Button = createButton(buttonPanel, player, promptAction1, Color.GREEN, Color.WHITE);
-        prompt2Button = createButton(buttonPanel, player, promptAction2, Color.GREEN, Color.WHITE);
-        prompt3Button = createButton(buttonPanel, player, promptAction3, Color.GREEN, Color.WHITE);
+        prompt1Button = createButton(buttonPanel, player, prompt.getPromptAction(0), Color.GREEN, Color.WHITE);
+        prompt2Button = createButton(buttonPanel, player, prompt.getPromptAction(1), Color.GREEN, Color.WHITE);
+        prompt3Button = createButton(buttonPanel, player, prompt.getPromptAction(2), Color.GREEN, Color.WHITE);
 
         window.add(buttonPanel, BorderLayout.SOUTH);
     }

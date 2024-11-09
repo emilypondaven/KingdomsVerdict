@@ -28,7 +28,7 @@ public class Prompt {
         return promptMessage;
     }
 
-    public PromptAction gePromptAction(int k) {
+    public PromptAction getPromptAction(int k) {
         return promptActions.get(k);
     }
 }
