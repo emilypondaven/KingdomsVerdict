@@ -170,4 +170,23 @@ public class Player {
             (GameEnv.villages.get(k)).changePopulation(changesInPopulation[k]);
         }
     }
+
+    public boolean allVillagesDead() {
+        for (int k = 0 ; k < 4; k++) {
+            if (!(GameEnv.villages.get(k)).getVillageDead()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void gameTurn(){
+        while (!allVillagesDead()) {
+
+        }
+    }
+
+    public int getVoteCount() {
+        return voteCount;
+    }
 }
