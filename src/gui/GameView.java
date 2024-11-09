@@ -96,7 +96,7 @@ public class GameView extends JPanel {
             gameEnvironment.resetPlayerCoords();
 
              // Create the custom popup dialog
-            JDialog dialog = new JDialog(Window.getInstance(), "Answer prompt", true); // 'true' makes it modal
+            JDialog dialog = new JDialog(Window.getInstance(), gameEnvironment.getCurrentVillage().getName(), true); // 'true' makes it modal
             dialog.setSize(1000, 400);
             dialog.setLayout(new BorderLayout());
 
