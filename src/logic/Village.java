@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Village {
+    private String imageString;
     private String name;
     private List<Prompt> prompts = new ArrayList<>();
     private int population;
@@ -10,11 +11,12 @@ public class Village {
     private Boolean villageDead;
     private int villageVotes;
 
-    public Village(String name, List<Prompt> prompts, String description, int population) {
+    public Village(String name, List<Prompt> prompts, String description, int population, String imageString) {
         this.name = name;
         this.prompts = prompts;
         this.description = description;
         this.population = population;
+        this.imageString = imageString;
     }
 
     public String getDescription() {
