@@ -6,6 +6,8 @@ public class Player {
     private int MOVEMENT_SPEED = 4;
     private int x, y;
 
+    private int gold = 100;
+
     public Player() {
         x = 0;
         y = 0;
