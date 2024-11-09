@@ -21,7 +21,10 @@ public class Prompt {
         for (int i=0; i<3; i++) {
             promptActionMessages.add(promptActions.get(i).getPromptActionMessage());
         }
-
         return promptActionMessages;
+    }
+
+    public String getPromptMessage() {
+        return promptMessage;
     }
 }

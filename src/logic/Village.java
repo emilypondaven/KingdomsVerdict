@@ -75,4 +75,11 @@ public class Village {
             villageVotes = 0;
         }
     }
+
+    public void changePopulation(int change) {
+        population = population + change;
+        if (population < 0) {
+            population = 0;
+        }
+    }
 }
