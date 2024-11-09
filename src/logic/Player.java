@@ -9,8 +9,8 @@ public class Player {
     private int x, y;
     private int width, height;
 
-    private int gold = 100;
-    private boolean reportReporting = true;
+    private static int gold = 100;
+    private static boolean reporterReporting = true;
 
     public Player() {
         x = 0;
@@ -59,28 +59,18 @@ public class Player {
         return gold;
     }
 
-    // Setter for gold
-    public void setGold(int gold) {
-        this.gold = gold;
-    }
-
     // Method to increase gold by a specific amount (you could also use a "change" method if you'd prefer)
-    public void changeGold(int amount) {
-        this.gold += amount;
+    public static void changeGold(int amount) {
+        gold += amount;
     }
 
-    // Getter for reportReporting
-    public boolean isReportReporting() {
-        return reportReporting;
+    // Getter for reporterReporting
+    public static boolean isReporterReporting() {
+        return reporterReporting;
     }
 
-    // Setter for reportReporting
-    public void setReportReporting(boolean reportReporting) {
-        this.reportReporting = reportReporting;
-    }
-
-    // Method to toggle reportReporting (change from true to false or false to true)
-    public void toggleReportReporting() {
-        this.reportReporting = !this.reportReporting;
+    // Setter for reporterReporting
+    public static void setreporterReporting(boolean reporterReportingValue) {
+        reporterReporting = reporterReportingValue;
     }
 }

@@ -53,5 +53,11 @@ public class PromptAction {
         this.reporterNotReportingChange = reporterNotHereChange;
     }
 
-    
+    public String getPostActionMessage() {
+        if (Player.isReporterReporting()) {
+            return postActionMessages[0];
+        } else {
+            return postActionMessages[1];
+        }
+    } 
 }
