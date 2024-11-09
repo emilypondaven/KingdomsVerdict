@@ -3,21 +3,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Village {
-    private String imageString;
     private String name;
-    private List<Prompt> prompts = new ArrayList<>();
+    private List<Prompt> prompts = new ArrayList<Prompt>();
     private int population;
     private String description;
     private Boolean villageDead;
     private int villageVotes;
+    protected int[][] villagePositions;
 
-    public Village(String name, List<Prompt> prompts, String description, int population, String imageString) {
+    public Village(String name, List<Prompt> prompts, String description, int population, int[][] villagePositions) {
         this.name = name;
         this.prompts = prompts;
         this.description = description;
         this.population = population;
-        this.imageString = imageString;
-        this.imageString = imageString;
+        this.villagePositions = villagePositions;
     }
 
     public String getDescription() {
@@ -82,5 +81,12 @@ public class Village {
         if (population < 0) {
             population = 0;
         }
+    }
+    public boolean inVillage(int x, int y) {
+        if (x < villagePositions[0][0] || x > villagePositions[0][1]
+            || y < villagePositions[1][0] || y > villagePositions[1][1]) {
+            return false;
+        }
+        else return true;
     }
 }
