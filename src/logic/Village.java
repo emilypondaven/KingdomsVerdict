@@ -11,11 +11,12 @@ public class Village {
     private Boolean villageDead;
     private int villageVotes;
 
-    public Village(String name, List<Prompt> prompts, String description, int population) {
+    public Village(String name, List<Prompt> prompts, String description, int population, String imageString) {
         this.name = name;
         this.prompts = prompts;
         this.description = description;
         this.population = population;
+        this.imageString = imageString;
         this.imageString = imageString;
     }
 
@@ -75,4 +76,6 @@ public class Village {
             villageVotes = 0;
         }
     }
+
+    // public
 }
