@@ -98,7 +98,7 @@ public class GameEnv {
         );
     }
 
-    public int getCurrentVillage() {
+    public Village getCurrentVillage() {
         return currentVillage;
     }
 
@@ -447,5 +447,9 @@ public class GameEnv {
         }
 
         return prompts;
+    }
+
+    public void resetCurrentVillage() {
+        currentVillage = null;
     }
 }

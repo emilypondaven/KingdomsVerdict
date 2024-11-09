@@ -66,7 +66,7 @@ public class ChoiceScreen {
         button.setBackground(backgroundColor);
         button.setForeground(textColor);
         button.setFocusPainted(false);
-        button.addActionListener(Main.getButtonListener());
+        // button.addActionListener(Main.getButtonListener());
         panel.add(button);
         return button;
     }
