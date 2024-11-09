@@ -81,18 +81,9 @@ public class GameView extends JPanel {
     private void updateGame() {
         // update the animation cycle
         gameEnvironment.getPlayer().updateAnimationStage();
-        switch (gameEnvironment.getCurrentVillage()) {
-            case 1:
-                //village1 
-                break;
-            case 2:
-                //village2
-            case 3:
-                //village3
-            case 4: 
-                //village4
-            default:
-                break;
+        if (gameEnvironment.getCurrentVillage() != null) {
+            //make the choce screen.
+            gameEnvironment.resetCurrentVillage();
         }
     }
 }

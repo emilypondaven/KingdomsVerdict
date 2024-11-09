@@ -12,7 +12,7 @@ public class GameEnv {
     private Village village2;
     private Village village3;
     private Village village4;
-    private int currentVillage = 0;
+    private Village currentVillage = null;
 
     public GameEnv() {
         player = new Player();
@@ -47,22 +47,22 @@ public class GameEnv {
         int playerX = getPlayerX() + 20;
         int playerY = getPlayerY() + 28;
         if (village1.inVillage(playerX, playerY)) {
-            currentVillage = 1;
+            currentVillage = village1;
             System.out.println("in village 1");
         }
         else if (village2.inVillage(playerX, playerY)) {
-            currentVillage = 2;
+            currentVillage = village2;
             System.out.println("in village 2");
         }
         else if (village3.inVillage(playerX, playerY)) {
-            currentVillage = 3;
+            currentVillage = village3;
             System.out.println("in village 3");
         }
         else if (village4.inVillage(playerX, playerY)) {
-            currentVillage = 4;
+            currentVillage = village4;
             System.out.println("in village 4");
         }
-        else currentVillage = 0;
+        else currentVillage = null;
     }
 
     public void initialiseVillages() {
@@ -98,7 +98,7 @@ public class GameEnv {
         );
     }
 
-    public int getCurrentVillage() {
+    public Village getCurrentVillage() {
         return currentVillage;
     }
 
@@ -447,5 +447,9 @@ public class GameEnv {
         }
 
         return prompts;
+    }
+
+    public void resetCurrentVillage() {
+        currentVillage = null;
     }
 }
