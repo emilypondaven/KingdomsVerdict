@@ -7,7 +7,7 @@ import java.awt.Dimension;
 
 public class Window extends JFrame{
     
-    private static final Dimension DEFAULT_DIMENSIONS = new Dimension(1100, 700);
+    public static final Dimension DEFAULT_DIMENSIONS = new Dimension(1100, 700);
 
     public Window() {
         setSize(DEFAULT_DIMENSIONS);

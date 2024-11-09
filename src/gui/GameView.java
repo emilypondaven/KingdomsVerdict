@@ -19,7 +19,7 @@ public class GameView extends JPanel {
         super();
         setBackground(Color.red);
         gameEnvironment = new GameEnv();
-        addKeyListener(new GameKeyboardListener(this));
+        addKeyListener(new GameKeyboardListener(this,gameEnvironment));
         setFocusable(true);
         instance = this;
     }
