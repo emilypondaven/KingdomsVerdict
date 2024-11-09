@@ -39,7 +39,13 @@ public class PromptAction {
 
     // Getter and Setter for villageVoterChange
     public int[] getVillageVoterChange() {
-        return villageVoterChange;
+        int[] change = villageVoterChange;
+        if (Player.isReporterReporting()) {
+            for (int k = 0; k < 4; k++) {
+                change[k] = change[k] + reporterNotReportingChange[k];
+            }
+        }
+        return change;
     }
 
     public void setVillageVoterChange(int[] villageVoterChange) {
